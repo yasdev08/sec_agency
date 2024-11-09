@@ -8,7 +8,7 @@ import Image from 'next/image'
 
 
 
-export default function main() {
+export default function Main() {
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const images = [

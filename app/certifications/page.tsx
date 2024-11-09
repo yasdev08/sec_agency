@@ -1,3 +1,3 @@
-export default function certifications(){
+export default function Certifications(){
     
 }

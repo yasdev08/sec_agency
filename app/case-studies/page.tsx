@@ -1,3 +1,3 @@
-export default function case_studies(){
+export default function Case_studies(){
     
 }

@@ -1,5 +1,5 @@
 
 
-export default function faq(){
+export default function Faq(){
     
 }
