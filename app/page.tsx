@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion,AnimatePresence} from 'framer-motion'
-import { Shield, Users, Eye, Clock, ChevronRight, Mail, Phone, MapPin, ChevronDown } from 'lucide-react'
+import { Shield, Users, Eye, Clock, Mail, Phone, MapPin } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 
