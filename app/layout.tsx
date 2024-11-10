@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Image from 'next/image';
+import WhatsappMsg from '@/components/whatsappMsg';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -37,6 +38,10 @@ export default function RootLayout({
 
         <main className="flex-grow">
           {children}
+
+          {/*Whatsapp message icon on all pages*/ }
+          
+          <WhatsappMsg/>
         </main>
 
         <footer className="bg-gray-800 py-8">
