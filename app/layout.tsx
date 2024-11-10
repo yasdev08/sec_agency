@@ -19,11 +19,16 @@ export default function RootLayout({
   return (
 
     <html lang="en">
+      <head>
+      <link rel="icon" href="/logooo.png" sizes="any" />
+
+
+      </head>
       <body className={`${inter.className} bg-gray-900 text-white min-h-screen flex flex-col`}>
         <header className="bg-gray-800 py-4">
           <div className="container mx-auto px-4 flex justify-between items-center">
           <Link href='/'>
-            <Image src="/security-svgrepo-com.svg" className="object-contain grid "  alt="security logo" width={60} height={60}/>
+            <Image src="/logooo.png" className="object-contain grid opacity:0 "  alt="security logo" width={60} height={60}/>
           </Link>
             <Nav/>
             

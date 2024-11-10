@@ -1,23 +1,51 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail,Phone,MapPin } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import Link from "next/link";
+import emailjs from '@emailjs/browser'
+
 
 export default function Contactform() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to a server
-    console.log("Form submitted:", { name, email, message });
-    // Reset form fields
-    setName("");
-    setEmail("");
-    setMessage("");
+
+    const templateParams = {
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    emailjs
+    .send(
+      'default_service',
+      'template_5bzixp5',
+      templateParams,
+      'BznnDkit0tmvMkfep'
+    )
+    .then(
+      (result)=>{
+        console.log("Email sent:", result.text);
+          alert("Message sent successfully!");
+          // Reset form fields
+          setName("");
+          setEmail("");
+          setMessage("");
+      },
+      (error) => {
+        console.log("Failed to send message:", error.text);
+        alert("Failed to send message, please try again.");
+      }
+    )
+
+
   };
   return (
-    <section className="py-20 bg-gray-900">
+    <section className="py-20 bg-gray-900" id="contact">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -76,15 +104,25 @@ export default function Contactform() {
             <div className="space-y-4 ">
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-4 text-red-500" />
-                <span>contact@securesolutions.com</span>
+                <Link href="mailto:contact@securesolutions.com" legacyBehavior>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <span>contact@securesolutions.com</span>
+                  </a>
+                </Link>
               </div>
               <div className="flex items-center">
                 <Phone className="w-6 h-6 mr-4 text-red-500" />
-                <span>+1 (555) 123-4567</span>
+                <Link href="tel:+33623860657" legacyBehavior>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <span>+33 (623) 860-657</span>
+                  </a>
+                </Link>
               </div>
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 mr-4 text-red-500" />
-                <span>123 Security St, Nourmandie, Paris 93000</span>
+                <Link href="">
+                  <span>107B Rue Henri Barbusse 93300 AUBERVILLIERS</span>
+                </Link>
               </div>
             </div>
           </div>

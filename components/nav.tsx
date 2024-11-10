@@ -15,7 +15,8 @@ export default function Nav(){
                   <li><Link href="/about" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">About Us</Link></li>
                   <li><Link href="/services" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Services</Link></li>
                   <li><Link href="/case-studies" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Case Studies</Link></li>
-                  <li><Link href="/certifications" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Certifications</Link></li>
+                  
+                  <li><Link href="/testimonials" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">Testimonials</Link></li>
                   <li><Link href="/faq" className="block px-4 py-2 text-sm text-white hover:bg-gray-700">FAQ</Link></li>
                 </ul>
               </li>
