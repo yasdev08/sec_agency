@@ -29,9 +29,9 @@ export default function About() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
             {[
-              { name: 'John Doe', role: 'Chief Executive Officer', image: '/placeholder.svg?height=300&width=300' },
-              { name: 'Jane Smith', role: 'Chief Operations Officer', image: '/placeholder.svg?height=300&width=300' },
-              { name: 'Mike Johnson', role: 'Head of Technology', image: '/placeholder.svg?height=300&width=300' },
+              { name: 'John Doe', role: 'Chief Executive Officer', image: '/assets/prof_icon.png' },
+              { name: 'Jane Smith', role: 'Chief Operations Officer', image: '/assets/prof_icon.png' },
+              { name: 'Mike Johnson', role: 'Head of Technology', image: '/assets/prof_icon.png' },
             ].map((member, index) => (
               <div key={index} className="bg-gray-800 rounded-lg overflow-hidden">
                 <img src={member.image} alt={member.name} className="w-full h-48 object-cover" />
