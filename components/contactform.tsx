@@ -3,21 +3,21 @@ import { motion } from "framer-motion";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
-import { RWebShare } from "react-web-share";
-import WhatsappMsg from "./whatsappMsg";
+
 
 export default function Contactform() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [from_name, setFrom_name] = useState("");
+  const [from_email, setFrom_email] = useState("");
   const [message, setMessage] = useState("");
-
+  const [from_number, setFrom_number] =useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     const templateParams = {
-      name: name,
-      email: email,
+      from_name: from_name,
+      from_email: from_email,
+      from_number: from_number,
       message: message,
     };
 
@@ -33,9 +33,11 @@ export default function Contactform() {
           console.log("Email sent:", result.text);
           alert("Message sent successfully!");
           // Reset form fields
-          setName("");
-          setEmail("");
+          setFrom_name("");
+          setFrom_number("");
+          setFrom_email("");
           setMessage("");
+          
         },
         (error) => {
           console.log("Failed to send message:", error.text);
@@ -51,27 +53,40 @@ export default function Contactform() {
           <div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block mb-2">
+                <label htmlFor="from_name" className="block mb-2">
                   Name
                 </label>
                 <input
                   type="text"
-                  id="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  id="from_name"
+                  value={from_name}
+                  onChange={(e) => setFrom_name(e.target.value)}
                   required
                   className="w-full px-4 py-2 rounded bg-gray-800 text-white"
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block mb-2">
+                <label htmlFor="from_number" className="block mb-2">
+                  Phone
+                </label>
+                <input
+                  type="tel"
+                  id="from_number"
+                  value={from_number}
+                  onChange={(e) => setFrom_number(e.target.value)}
+                  required
+                  className="w-full px-4 py-2 rounded bg-gray-800 text-white"
+                />
+              </div>
+              <div>
+                <label htmlFor="from_email" className="block mb-2">
                   Email
                 </label>
                 <input
                   type="email"
-                  id="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  id="from_email"
+                  value={from_email}
+                  onChange={(e) => setFrom_email(e.target.value)}
                   required
                   className="w-full px-4 py-2 rounded bg-gray-800 text-white"
                 />

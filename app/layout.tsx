@@ -25,16 +25,10 @@ export default function RootLayout({
 
 
       </head>
-      <body className={`${inter.className} bg-gray-900 text-white min-h-screen flex flex-col`}>
-        <header className="bg-gray-800 py-4">
-          <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href='/'>
-            <Image src="/logooo.png" className="object-contain grid opacity:0 "  alt="security logo" width={60} height={60}/>
-          </Link>
-            <Nav/>
-            
-          </div>
-        </header>
+      <body className={`${inter.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}>
+        
+          <Nav/>
+        
 
         <main className="flex-grow">
           {children}
@@ -45,7 +39,7 @@ export default function RootLayout({
         </main>
 
         <footer className="bg-gray-800 py-8">
-          <div className="container mx-auto px-4 text-center">
+          <div className="container mx-auto px-4 text-white text-center">
             <p>&copy; {new Date().getFullYear()} Secure Solutions. All rights reserved.</p>
           </div>
         </footer>

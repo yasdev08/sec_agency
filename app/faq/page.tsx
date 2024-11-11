@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+
 
 export default function Faq(){
 
@@ -42,7 +42,7 @@ export default function Faq(){
   </header>*/}
 
       <main className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Frequently Asked Questions</h1>
+        <h1 className="text-4xl font-bold mb-8 ">Frequently Asked Questions</h1>
 
         <div className="space-y-8">
           {faqs.map((faq, index) => (
