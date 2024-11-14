@@ -14,14 +14,14 @@ export default function Hero(){
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length)
-    }, 3000) // Change image every 5 seconds
+    }, 3000) // Change image every 3 seconds
 
     return () => clearInterval(timer)
   }, [images.length])
 
   
     return(
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       <AnimatePresence initial={false}>
           <motion.img
             key={currentImageIndex}
@@ -39,7 +39,7 @@ export default function Hero(){
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-5xl font-bold mb-4"
+            className="text-5xl font-bold mb-4 text-white"
           >
             Secure Solutions for a Safer World
           </motion.h1>
@@ -47,7 +47,7 @@ export default function Hero(){
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-xl mb-8"
+            className="text-xl mb-8 text-white"
           >
             Your trusted partner in private security
           </motion.p>

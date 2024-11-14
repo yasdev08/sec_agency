@@ -1,11 +1,12 @@
 import { motion } from "framer-motion"
+import { Scale } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
 
 export default function Team(){
     return(
-    <section className="py-20 bg-gray-800">
+    <section className="py-20 bg-bg">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">Our Team</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -19,12 +20,13 @@ export default function Team(){
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gray-700 rounded-lg overflow-hidden"
+              whileHover={{scale:1.05, borderColor:"#dc2626"}}
+              className="bg-white rounded-lg overflow-hidden border-2"
             >
               <Image src={member.image} alt={member.name} className="w-full h-64 object-cover" width = {600} height={600}/>
               <div className="p-4">
-                <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                <p className="text-gray-300">{member.role}</p>
+                <h3 className="text-xl text-primtext font-semibold mb-1">{member.name}</h3>
+                <p className="text-sectext">{member.role}</p>
               </div>
             </motion.div>
           ))}

@@ -5,10 +5,10 @@ import { motion } from "framer-motion"
 export default function Wcu(){
 
     return(
-    <section className="py-20 bg-gray-900">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Why Choose Us</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <section className="py-20 bg-bg">
+        <div className="container mx-auto px-4 my-6">
+          <h2 className="text-3xl text-navtext font-bold mb-20 text-center">Why Choose Us</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ml-4">
             {[
               { icon: Shield, title: 'Expertise', description: 'Over 20 years of experience in the security industry.' },
               { icon: Users, title: 'Trained Professionals', description: 'Our team consists of ex-military and law enforcement experts.' },
@@ -24,8 +24,8 @@ export default function Wcu(){
               >
                 <feature.icon className="w-8 h-8 mr-4 text-red-500 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-gray-300">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-2 text-primtext">{feature.title}</h3>
+                  <p className="text-sectext">{feature.description}</p>
                 </div>
               </motion.div>
             ))}

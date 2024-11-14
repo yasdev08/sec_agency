@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 
@@ -46,14 +46,14 @@ export default function Contactform() {
       );
   };
   return (
-    <section className="py-20 bg-gray-900" id="contact">
+    <section className="py-20 bg-bg" id="contact">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Contact Us</h2>
+        <h2 className="text-3xl font-bold mb-12 text-navtext text-center">Contact Us</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="from_name" className="block mb-2">
+                <label htmlFor="from_name" className="block mb-2 text-primtext">
                   Name
                 </label>
                 <input
@@ -62,11 +62,12 @@ export default function Contactform() {
                   value={from_name}
                   onChange={(e) => setFrom_name(e.target.value)}
                   required
-                  className="w-full px-4 py-2 rounded bg-gray-800 text-white"
+                  placeholder="Please Enter Your Name"
+                  className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
               </div>
               <div>
-                <label htmlFor="from_number" className="block mb-2">
+                <label htmlFor="from_number" className="block mb-2 text-primtext">
                   Phone
                 </label>
                 <input
@@ -75,11 +76,12 @@ export default function Contactform() {
                   value={from_number}
                   onChange={(e) => setFrom_number(e.target.value)}
                   required
-                  className="w-full px-4 py-2 rounded bg-gray-800 text-white"
+                  placeholder="Type Your Phone Number"
+                  className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
               </div>
               <div>
-                <label htmlFor="from_email" className="block mb-2">
+                <label htmlFor="from_email" className="block mb-2 text-primtext">
                   Email
                 </label>
                 <input
@@ -87,34 +89,38 @@ export default function Contactform() {
                   id="from_email"
                   value={from_email}
                   onChange={(e) => setFrom_email(e.target.value)}
+                  placeholder="Type your E-mail"
                   required
-                  className="w-full px-4 py-2 rounded bg-gray-800 text-white"
+                  className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block mb-2">
+                <label htmlFor="message" className="block mb-2 text-primtext">
                   Message
                 </label>
                 <textarea
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
+                  placeholder="Please type your message here ..."
                   required
-                  className="w-full px-4 py-2 rounded bg-gray-800 text-white h-32"
+                  className="w-full px-4 py-2 rounded bg-bg text-sectext h-32 border-gray-500 border-2"
                 ></textarea>
               </div>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="bg-red-600 text-white px-6 py-2 rounded font-semibold"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
               >
                 Send Message
+                <Send className="ml-2 -mr-1 h-5 w-5 " aria-hidden="true" />
               </motion.button>
+              
             </form>
           </div>
 
-          <div className="mt-8">
+          <div className="mt-8 text-primtext font-medium">
             <div className="space-y-4 ">
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-4 text-red-500" />

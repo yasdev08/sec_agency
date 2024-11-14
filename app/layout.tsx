@@ -1,11 +1,11 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import Link from 'next/link'
 import Nav from '@/components/nav'
 import Image from 'next/image';
 import WhatsappMsg from '@/components/whatsappMsg';
 
-const inter = Inter({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Secure Solutions - Your Trusted Security Partner',
@@ -25,7 +25,7 @@ export default function RootLayout({
 
 
       </head>
-      <body className={`${inter.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}>
+      <body className={`${montserrat.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}>
         
           <Nav/>
         

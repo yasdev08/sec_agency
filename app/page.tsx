@@ -6,10 +6,11 @@ import Wcu from "@/components/wcu";
 import Case from "@/components/case";
 import Team from "@/components/team";
 import Contactform from "@/components/contactform";
+import Faq from "@/components/faq";
 
 export default function Main() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-bg text-primtext min-h-screen">
       {/* Hero Section */}
       <Hero />
 
@@ -24,6 +25,9 @@ export default function Main() {
 
       {/* Team Section */}
       <Team />
+
+      {/* FAQ Section */}
+      <Faq/>
 
       {/* Contact Form Section */}
       <Contactform />

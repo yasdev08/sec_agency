@@ -3,10 +3,10 @@ import Link from "next/link"
 export default function Case(){
 
     return(
-        <section className="py-20 bg-gray-800">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Our Success Stories</h2>
-          <p className="text-center text-gray-300 mb-8">
+        <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 my-6">
+          <h2 className="text-3xl font-bold mb-12 text-center text-primtext">Our Success Stories</h2>
+          <p className="text-center text-sectext mb-8">
             Discover how we've helped our clients overcome complex security challenges and achieve peace of mind.
           </p>
           <div className="text-center">

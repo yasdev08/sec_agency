@@ -1,62 +1,129 @@
+'use client'
 
+import { motion } from 'framer-motion'
+import { Shield, Users, Award, Clock } from 'lucide-react'
+import Image from 'next/image'
+
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6 }
+}
+
+const stats = [
+  { icon: Shield, value: '20+', label: 'Years of Experience' },
+  { icon: Users, value: '1000+', label: 'Satisfied Clients' },
+  { icon: Award, value: '50+', label: 'Industry Awards' },
+  { icon: Clock, value: '24/7', label: 'Support Available' },
+]
+
+const teamMembers = [
+  { name: 'John Doe', role: 'CEO & Founder', image: '/assets/person-6.jpg' },
+  { name: 'Jane Smith', role: 'Head of Operations', image: '/assets/person-6.jpg' },
+  { name: 'Mike Johnson', role: 'Chief Security Officer', image: '/assets/person-6.jpg' },
+]
 
 export default function About() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
-      
+    <div className="bg-gradient-to-b from-gray-100 to-bg min-h-screen">
+      <motion.section 
+        className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+        initial="initial"
+        animate="animate"
+        variants={{ animate: { transition: { staggerChildren: 0.1 } } }}
+      >
+        <motion.h1 
+          className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800"
+          variants={fadeIn}
+        >
+          About Secure Solutions
+        </motion.h1>
+        
+        <motion.p 
+          className="text-xl text-center mb-12 text-gray-600 max-w-3xl mx-auto"
+          variants={fadeIn}
+        >
+          With over two decades of experience, we've been at the forefront of private security, 
+          providing unparalleled protection and peace of mind to our clients.
+        </motion.p>
 
-      <main className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">About Secure Solutions</h1>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Mission</h2>
-          <p className="text-gray-300 mb-4">
-            At Secure Solutions, our mission is to provide unparalleled security services that ensure the safety and peace of mind of our clients. We are committed to delivering innovative, reliable, and professional security solutions tailored to meet the unique needs of individuals, businesses, and organizations.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our History</h2>
-          <p className="text-gray-300 mb-4">
-            Founded in 2000, Secure Solutions has grown from a small local security firm to a leading provider of comprehensive security services. With over two decades of experience, we have continuously evolved our practices and technologies to stay at the forefront of the security industry.
-          </p>
-        </section>
-
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Our Team</h2>
-          <p className="text-gray-300 mb-4">
-            Our team consists of highly trained professionals with diverse backgrounds in law enforcement, military, and private security. Led by our experienced management team, our security personnel undergo rigorous training and continuous professional development to ensure they are equipped to handle any situation.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
-            {[
-              { name: 'John Doe', role: 'Chief Executive Officer', image: '/assets/prof_icon.png' },
-              { name: 'Jane Smith', role: 'Chief Operations Officer', image: '/assets/prof_icon.png' },
-              { name: 'Mike Johnson', role: 'Head of Technology', image: '/assets/prof_icon.png' },
-            ].map((member, index) => (
-              <div key={index} className="bg-gray-800 rounded-lg overflow-hidden">
-                <img src={member.image} alt={member.name} className="w-full h-48 object-cover" />
-                <div className="p-4">
-                  <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
-                  <p className="text-gray-400">{member.role}</p>
-                </div>
-              </div>
-            ))}
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-20"
+          variants={fadeIn}
+        >
+          <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
+            <Image
+              src="/assets/portrait-male-security-guard-with-uniforaaam.jpg"
+              alt="Secure Solutions Team"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
-        </section>
+          <div className="flex flex-col justify-center">
+            <h2 className="text-3xl font-semibold mb-6 text-gray-800">Our Mission</h2>
+            <p className="text-gray-600 mb-4">
+              At Secure Solutions, we are committed to providing top-tier security services 
+              that go beyond conventional measures. Our mission is to create safer environments 
+              for our clients, leveraging cutting-edge technology and expert personnel.
+            </p>
+            <p className="text-gray-600">
+              We believe in proactive security measures, continuous training, and 
+              adapting to the ever-evolving landscape of potential threats.
+            </p>
+          </div>
+        </motion.div>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Our Values</h2>
-          <ul className="list-disc list-inside text-gray-300">
-            <li className="mb-2">Integrity: We uphold the highest ethical standards in all our operations.</li>
-            <li className="mb-2">Professionalism: Our team is committed to excellence in every aspect of our service.</li>
-            <li className="mb-2">Innovation: We continuously seek new ways to enhance our security solutions.</li>
-            <li className="mb-2">Client-Centric: We prioritize our clients' needs and tailor our services accordingly.</li>
-            <li>Continuous Improvement: We invest in ongoing training and development for our team.</li>
-          </ul>
-        </section>
-      </main>
+        <motion.div 
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
+          variants={fadeIn}
+        >
+          {stats.map((stat, index) => (
+            <motion.div 
+              key={index} 
+              className="bg-white p-6 rounded-lg shadow-md text-center border-2"
+              whileHover={{ scale: 1.05 , borderColor:"#ef4444"}}
+              whileTap={{ scale: 0.95 }}
+              
+            >
+              <stat.icon className="w-12 h-12 mx-auto mb-4 text-red-500" />
+              <h3 className="text-3xl font-bold text-gray-800 mb-2">{stat.value}</h3>
+              <p className="text-gray-600">{stat.label}</p>
+            </motion.div>
+          ))}
+        </motion.div>
 
-      
+        <motion.h2 
+          className="text-3xl font-semibold text-center mb-12 text-gray-800"
+          variants={fadeIn}
+        >
+          Meet Our Leadership
+        </motion.h2>
+
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          variants={fadeIn}
+        >
+          {teamMembers.map((member, index) => (
+            <motion.div 
+              key={index} 
+              className="bg-white p-6 rounded-lg shadow-md text-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <div className="relative h-64 mb-4 rounded-md overflow-hidden">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+              <h3 className="text-xl font-semibold mb-2 text-gray-800">{member.name}</h3>
+              <p className="text-gray-600">{member.role}</p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </motion.section>
     </div>
   )
 }

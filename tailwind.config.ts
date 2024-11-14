@@ -12,7 +12,11 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         custom_red: "#ae2829ff",
-        custom_blue: "#004aadff"
+        custom_blue: "#004aadff",
+        bg: "#f7f7f7",
+        navtext:"#1f2d3a",
+        primtext:"#1f2937",
+        sectext:"#4b5563"
       },
     },
   },
