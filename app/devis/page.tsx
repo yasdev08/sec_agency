@@ -16,9 +16,9 @@ export default function MultiStepForm() {
   const handleNext = () => setStep((prev) => prev + 1);
   const handlePrev = () => setStep((prev) => prev - 1);
 
-  const handleChange = (e:FormEvent) => {
+ { /*const handleChange = (e:FormEvent) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  };*/}
 
   return (
     <div className="bg-bg text-primtext min-h-screen flex flex-col items-center justify-center p-6">
@@ -73,7 +73,7 @@ export default function MultiStepForm() {
                 name="firstName"
                 placeholder="Prénom *"
                 value={formData.firstName}
-                onChange={handleChange}
+                /*onChange={handleChange}*/
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-red-500"
               />
               <input
@@ -81,7 +81,7 @@ export default function MultiStepForm() {
                 name="lastName"
                 placeholder="Nom *"
                 value={formData.lastName}
-                onChange={handleChange}
+                /*onChange={handleChange}*/
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-red-500"
               />
               <input
@@ -89,7 +89,7 @@ export default function MultiStepForm() {
                 name="email"
                 placeholder="E-Mail *"
                 value={formData.email}
-                onChange={handleChange}
+                /*onChange={handleChange}*/
                 className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 text-white focus:outline-none focus:border-red-500"
               />
             </div>
