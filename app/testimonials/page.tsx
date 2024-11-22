@@ -1,6 +1,9 @@
+"use client"
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowLeft, Star } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const testimonials = [
   {
@@ -35,19 +38,19 @@ const testimonials = [
 
 export default function TestimonialsPage() {
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-bg text-primtext min-h-screen">
       
 
       <main className="container mx-auto px-4 py-12">
         <h1 className="text-4xl font-bold mb-8 text-center">Client Testimonials</h1>
 
-        <p className="text-gray-300 mb-12 text-center max-w-2xl mx-auto">
+        <p className="text-sectext mb-12 text-center max-w-2xl mx-auto">
           Don't just take our word for it. Here's what our clients have to say about Secure Solutions' commitment to excellence in security services.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg">
+            <motion.div key={index} className="bg-white p-6 rounded-lg border-2 " whileHover={{scale:1.05,borderColor:'#ef4444'}}>
               <div className="flex items-center mb-4">
                 <Image
                   src={testimonial.image}
@@ -58,10 +61,10 @@ export default function TestimonialsPage() {
                 />
                 <div>
                   <h2 className="font-semibold">{testimonial.name}</h2>
-                  <p className="text-gray-400 text-sm">{testimonial.company}</p>
+                  <p className="text-sectext text-sm">{testimonial.company}</p>
                 </div>
               </div>
-              <p className="text-gray-300 mb-4">"{testimonial.quote}"</p>
+              <p className="text-sectext mb-4">"{testimonial.quote}"</p>
               <div className="flex">
                 {[...Array(5)].map((_, i) => (
                   <Star
@@ -72,7 +75,7 @@ export default function TestimonialsPage() {
                   />
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

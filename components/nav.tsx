@@ -1,31 +1,30 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ChevronDown, Menu, X } from "lucide-react"
-import { useState } from "react"
-import { usePathname } from "next/navigation"
-import Image from "next/image"
+import Link from "next/link";
+import { ChevronDown, Menu, X } from "lucide-react";
+import { useState } from "react";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 const navItems = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/case-studies', label: 'Case Studies' },
-  { href: '/testimonials', label: 'Testimonials' },
-  { href: './#contact', label: 'Contact' },
-]
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/case-studies", label: "Case Studies" },
+  { href: "/testimonials", label: "Testimonials" },
+  { href: "./#contact", label: "Contact" },
+];
 
-export default function Nav(){
-  const [isOpen, setIsOpen] = useState(false)
-  const pathname = usePathname()
-    return(
-        
-      <nav className="bg-bg1 shadow-md border-b-2 border-gray-800">
+export default function Nav() {
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  return (
+    <nav className="bg-bg1 shadow-md border-b-2 border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center">
-            <Link href='/' className="flex-shrink-0 ">
-            {/*<Image src="/logooo.png"   alt="security logo" width={100} height={100}/>*/}
-          </Link>
+          <div className="flex-1 items-center">
+            <Link href="/" className="flex-shrink-0 ">
+              <Image src="/logooo.png"   alt="security logo" width={100} height={100}/>
+            </Link>
           </div>
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
@@ -35,13 +34,20 @@ export default function Nav(){
                   href={item.href}
                   className={`px-3 py-2 rounded-md text-sm font-medium ${
                     pathname === item.href
-                      ? 'bg-red-500 font-semibold text-white'
-                      : 'text-navtext hover:bg-red-500 hover:text-white'
+                      ? "bg-red-500 font-semibold text-white"
+                      : "text-navtext hover:bg-red-500 hover:text-white"
                   } transition-colors duration-200`}
                 >
                   {item.label}
                 </Link>
               ))}
+              <Link
+                href="/devis"
+                className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold text-sm"
+              >
+                {" "}
+                Demander un devis
+              </Link>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -72,18 +78,26 @@ export default function Nav(){
                 href={item.href}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
                   pathname === item.href
-                    ? 'bg-red-500 font-extrabold text-white'
-                    : 'text-navtext hover:bg-red-500 hover:text-white'
+                    ? "bg-red-500 font-extrabold text-white"
+                    : "text-navtext hover:bg-red-500 hover:text-white"
                 } transition-colors duration-200`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
               </Link>
             ))}
+            <div className="text-center max-w-full">
+              <Link
+                href="/devis"
+                className="bg-red-600 text-white px-8 py-3 rounded-full font-semibold text-base "
+              >
+                
+                Demander un devis
+              </Link>
+            </div>
           </div>
         </div>
       )}
     </nav>
-  )
-        
+  );
 }

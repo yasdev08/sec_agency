@@ -14,6 +14,7 @@ import {
 import { motion } from "framer-motion";
 
 export default function ServicesPage() {
+  
   const services = [
     {
       icon: Shield,
@@ -81,7 +82,7 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <section className="mt-12">
+        <section className="mt-12 text-center">
           <h2 className="text-2xl font-semibold mb-4 text-primtext">
             Customized Solutions
           </h2>
@@ -93,7 +94,7 @@ export default function ServicesPage() {
           </p>
         </section>
 
-        <section className="mt-8">
+        <section className="mt-8 text-center">
           <h2 className="text-2xl font-semibold mb-4 text-primtext">
             Get in Touch
           </h2>

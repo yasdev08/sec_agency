@@ -124,9 +124,9 @@ export default function Contactform() {
             <div className="space-y-4 ">
               <div className="flex items-center">
                 <Mail className="w-6 h-6 mr-4 text-red-500" />
-                <Link href="mailto:contact@securesolutions.com" legacyBehavior>
+                <Link href="mailto:contact@cpservice.pro" legacyBehavior>
                   <a target="_blank" rel="noopener noreferrer">
-                    <span>contact@securesolutions.com</span>
+                    <span>contact@cpservice.pro</span>
                   </a>
                 </Link>
               </div>

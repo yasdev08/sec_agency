@@ -1,6 +1,8 @@
+"use client"
+
 import Link from 'next/link'
 import { Shield, Users, Eye, Lock } from 'lucide-react'
-
+import {motion} from 'framer-motion'
 export default function Case_studies() {
   const caseStudies = [
     {
@@ -38,44 +40,46 @@ export default function Case_studies() {
   ]
 
   return (
-    <div className="bg-gray-900 text-white min-h-screen">
+    <div className="bg-bg text-primtext min-h-screen">
       
 
       <main className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Case Studies</h1>
+        <h1 className="text-4xl text-primtext font-bold mb-8 text-center">Case Studies</h1>
 
-        <p className="text-gray-300 mb-8">
+        <p className="text-sectext mb-8 text-center">
           Explore how Secure Solutions has successfully addressed complex security challenges for our clients across various industries. These case studies demonstrate our expertise, innovative approaches, and the tangible results we deliver.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
           {caseStudies.map((study, index) => (
-            <div key={index} className="bg-gray-800 p-6 rounded-lg">
+
+            <motion.div key={index} className="bg-white p-6 rounded-lg border-2 " whileHover={{scale:1.04,borderColor:"#ef4444"}} whileTap={{scale:0.96}}>
               <study.icon className="w-12 h-12 mb-4 text-red-500" />
               <h2 className="text-2xl font-semibold mb-2">{study.title}</h2>
-              <p className="text-gray-400 mb-4">Client: {study.client}</p>
+              <p className="text-sectext mb-4">Client: {study.client}</p>
               <div className="mb-4">
                 <h3 className="text-lg font-semibold mb-2">Challenge:</h3>
-                <p className="text-gray-300">{study.challenge}</p>
+                <p className="text-sectext">{study.challenge}</p>
               </div>
               <div className="mb-4">
                 <h3 className="text-lg font-semibold mb-2">Solution:</h3>
-                <p className="text-gray-300">{study.solution}</p>
+                <p className="text-sectext">{study.solution}</p>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-2">Result:</h3>
-                <p className="text-gray-300">{study.result}</p>
+                <p className="text-sectext">{study.result}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
-        <section className="mt-12">
-          <h2 className="text-2xl font-semibold mb-4">Your Security Challenge</h2>
-          <p className="text-gray-300 mb-4">
+        <section className="mt-12 text-center">
+          <h2 className="text-2xl font-semibold mb-4 text-center">Your Security Challenge</h2>
+          <p className="text-sectext text-center mb-4">
             Every security situation is unique. Our team of experts is ready to analyze your specific needs and develop a tailored solution that addresses your security challenges effectively.
           </p>
-          <Link href="/#contact" className="bg-red-600 text-white px-6 py-2 rounded font-semibold inline-block hover:bg-red-700 transition-colors">
+          <Link href="/#contact" className="bg-red-600  text-white px-6 py-2 rounded font-semibold inline-block hover:bg-red-700 transition-colors">
             Discuss Your Security Needs
           </Link>
         </section>
