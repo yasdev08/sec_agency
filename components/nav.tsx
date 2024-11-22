@@ -22,8 +22,8 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <div className="flex-1 items-center">
-            <Link href="/" className="flex-shrink-0 ">
-              <Image src="/logooo.png"   alt="security logo" width={100} height={100}/>
+            <Link href="/">
+              <Image src="/log.png"   alt="security logo" width={150} height={150}/>
             </Link>
           </div>
           <div className="hidden md:block">
