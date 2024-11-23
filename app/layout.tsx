@@ -1,9 +1,8 @@
 import './globals.css'
 import { Montserrat } from 'next/font/google'
-import Link from 'next/link'
 import Nav from '@/components/nav'
-import Image from 'next/image';
 import WhatsappMsg from '@/components/whatsappMsg';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -22,6 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
       <link rel="icon" href="/logooo.png" sizes="any" />
+      <GoogleAnalytics gaId="G-M0LRPKVMCK" />
 
 
       </head>
