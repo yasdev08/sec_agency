@@ -19,9 +19,10 @@ export default function RootLayout({
   return (
 
     <html lang="en">
+            <GoogleAnalytics gaId="G-M0LRPKVMCK" />
+
       <head>
       <link rel="icon" href="/logooo.png" sizes="any" />
-      <GoogleAnalytics gaId="G-M0LRPKVMCK" />
 
 
       </head>
