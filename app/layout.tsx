@@ -4,6 +4,7 @@ import Nav from '@/components/nav'
 import WhatsappMsg from '@/components/whatsappMsg';
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -45,6 +46,7 @@ export default function RootLayout({
           </div>
         </footer>
         <Analytics/>
+        <SpeedInsights />
 
       </body>
       <GoogleAnalytics gaId="G-M0LRPKVMCK" />
