@@ -3,6 +3,7 @@ import { Montserrat } from 'next/font/google'
 import Nav from '@/components/nav'
 import WhatsappMsg from '@/components/whatsappMsg';
 import { GoogleAnalytics } from '@next/third-parties/google'
+import { Analytics } from '@vercel/analytics/next';
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -19,7 +20,7 @@ export default function RootLayout({
   return (
 
     <html lang="en">
-            <GoogleAnalytics gaId="G-M0LRPKVMCK" />
+            
 
       <head>
       <link rel="icon" href="/logooo.png" sizes="any" />
@@ -33,7 +34,6 @@ export default function RootLayout({
 
         <main className="flex-grow">
           {children}
-
           {/*Whatsapp message icon on all pages*/ }
           
           <WhatsappMsg/>
@@ -44,7 +44,10 @@ export default function RootLayout({
             <p>&copy; {new Date().getFullYear()} Secure Solutions. All rights reserved.</p>
           </div>
         </footer>
+        <Analytics/>
+
       </body>
+      <GoogleAnalytics gaId="G-M0LRPKVMCK" />
     </html>
     
   )
