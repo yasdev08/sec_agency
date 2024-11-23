@@ -18,12 +18,12 @@ export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   return (
-    <nav className="bg-bg1 shadow-md border-b-2 border-gray-800">
+    <nav className="bg-bg1 shadow-md border-b-2 border-gray-800 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex-1 items-center">
+          <div className="flex justify-center md:justify-start flex-1 mt-1">
             <Link href="/">
-              <Image src="/log.png"   alt="security logo" width={150} height={150}/>
+              <Image src="/log.png"   alt="security logo" width={145} height={145}/>
             </Link>
           </div>
           <div className="hidden md:block">
