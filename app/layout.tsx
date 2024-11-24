@@ -24,9 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
+      {/* <head>
         <link rel="icon" href="/logooo.png" sizes="any" />
-      </head>
+      </head> */}
       <body
         className={`${montserrat.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}
       >
