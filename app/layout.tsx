@@ -12,9 +12,6 @@ export const metadata = {
   title: "Secure Solutions - Your Trusted Security Partner",
   description:
     "Providing comprehensive security solutions for individuals and businesses.",
-  icons: {
-    icon: "/favicon.ico", // or '/icon.ico' for Next.js 14+
-  },
 };
 
 export default function RootLayout({
@@ -24,9 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      {/* <head>
-        <link rel="icon" href="/logooo.png" sizes="any" />
-      </head> */}
+      <head>
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body
         className={`${montserrat.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}
       >
