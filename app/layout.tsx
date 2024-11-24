@@ -13,12 +13,7 @@ export const metadata = {
   description:
     "Providing comprehensive security solutions for individuals and businesses.",
   icons: {
-    rel: "icon",
-    icon: "/favicon.ico", // or '/icon.ico' for Next.js 14+
-    sizes:'48x48',
-  
-  
-  
+    icon: "/icon.ico", // or '/icon.ico' for Next.js 14+
   },
 };
 
