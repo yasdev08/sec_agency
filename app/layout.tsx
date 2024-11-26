@@ -2,7 +2,7 @@ import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Nav from "@/components/nav";
 import WhatsappMsg from "@/components/whatsappMsg";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
@@ -21,6 +21,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr">
+      <GoogleTagManager gtmId={"GTM-5W9F7HVG"}/>
       <head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="keywords" content="sécurité privée, vigiles, sécurité événementielle, gestion de foule, protection rapprochée, sécurité incendie, maîtres chiens, sécurisation de sites sensibles, sécurité magasins, CPService" />
@@ -28,6 +29,8 @@ export default function RootLayout({
       <body
         className={`${montserrat.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}
       >
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=5W9F7HVG"
+height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
         <Nav />
 
         <main className="flex-grow">
@@ -48,6 +51,8 @@ export default function RootLayout({
         <SpeedInsights />
       </body>
       <GoogleAnalytics gaId="G-M0LRPKVMCK" />
+      
+      
     </html>
   );
 }
