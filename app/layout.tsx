@@ -9,9 +9,9 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Secure Solutions - Your Trusted Security Partner",
+  title: "CpService - Votre Expert en Sécurité Privée en France",
   description:
-    "Providing comprehensive security solutions for individuals and businesses.",
+    "CPService offre des solutions de sécurité sur mesure : vigiles, sécurité événementielle, gestion de foule, protection rapprochée, sécurité incendie, et bien plus. Faites confiance à nos experts pour protéger vos biens, vos événements et vos espaces sensibles.",
 };
 
 export default function RootLayout({
@@ -23,6 +23,7 @@ export default function RootLayout({
     <html lang="fr">
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="keywords" content="sécurité privée, vigiles, sécurité événementielle, gestion de foule, protection rapprochée, sécurité incendie, maîtres chiens, sécurisation de sites sensibles, sécurité magasins, CPService" />
       </head>
       <body
         className={`${montserrat.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}
