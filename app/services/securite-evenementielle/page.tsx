@@ -60,7 +60,7 @@ export default function Seceven() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-center">
-                  <Check className="w-5 h-5 text-green-500 mr-2" />
+                  <Check className="w-8 h-8 text-green-500 mr-2" />
                   <span>{feature}</span>
                 </div>
               ))}

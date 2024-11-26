@@ -12,15 +12,14 @@ const fadeIn = {
 };
 
 const features = [
-  "Gestion des files d’attente pour éviter les débordements",
-"Contrôles rigoureux d’accès (vérifications des badges et invitations)",
-"Surveillance des zones critiques pour prévenir les incidents",
-"Sécurisation des sorties de secours et gestion des évacuations",
-"Formation des équipes sur place à la gestion des foules",
-"Assistance aux personnes vulnérables dans les zones de rassemblement",
+  "Patrouilles avec maîtres-chiens pour la surveillance active",
+  "Détection d’intrus, d’explosifs ou de substances illicites",
+  "Sécurisation des événements et des sites industriels",
+  "Protection des zones résidentielles et commerciales",
+  "Intervention rapide et ciblée en cas d’alerte",
 ];
 
-export default function gdf() {
+export default function maitrechien() {
   return (
     <div className="bg-gradient-to-b from-gray-100 to-bg min-h-screen">
       <motion.section
@@ -33,7 +32,7 @@ export default function gdf() {
           className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800"
           variants={fadeIn}
         >
-          Gestion de Foule et Contrôle d’Accès
+          Maîtres-chiens
         </motion.h1>
 
         <motion.div
@@ -42,7 +41,7 @@ export default function gdf() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
-              src="/assets/controle-d'acces.jpg"
+              src="/assets/maitre-chien-securite-privee.jpg"
               alt="Personal Protection"
               width={600}
               height={400}
@@ -51,9 +50,9 @@ export default function gdf() {
           </div>
           <div className="md:w-1/2 md:pl-8">
             <p className="text-xl mb-6 text-gray-600">
-              Nous offrons des services spécialisés pour gérer les foules et
-              contrôler les accès, garantissant une circulation fluide et
-              sécurisée dans des environnements à forte densité.
+              Nos équipes de maîtres-chiens offrent une solution efficace pour
+              la surveillance et la dissuasion. La présence d’un chien bien
+              formé augmente considérablement le niveau de sécurité.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {features.map((feature, index) => (
@@ -71,17 +70,17 @@ export default function gdf() {
           className="bg-white rounded-lg shadow-lg p-8 mb-16"
         >
           <h2 className="text-3xl font-bold mb-6 text-gray-800">
-          Pourquoi nous choisir ?
+          Pourquoi choisir nos maîtres-chiens ?
           </h2>
           <ul className="space-y-4">
             <li className="flex items-start">
               <Shield className="w-6 h-6 text-logcol1 mr-2 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">
-                Maîtrise des environnements complexes
+                Chiens hautement formés
                 </h3>
                 <p className="text-gray-600">
-                Nous intervenons dans des lieux où la gestion des foules est cruciale, comme les stades, concerts et centres commerciaux.
+                Nos chiens sont rigoureusement entraînés pour réagir rapidement et efficacement à toute menace.
                 </p>
               </div>
             </li>
@@ -89,25 +88,14 @@ export default function gdf() {
               <Shield className="w-6 h-6 text-logcol1 mr-2 flex-shrink-0 mt-1" />
               <div>
                 <h3 className="font-semibold text-lg mb-2">
-                  Sécurité renforcée
+                Dissuasion naturelle
                 </h3>
                 <p className="text-gray-600">
-                Nos processus incluent des contrôles approfondis pour minimiser les risques et garantir la sécurité de tous.
+                La simple présence d’un chien de sécurité réduit considérablement les risques d’intrusion.
                 </p>
               </div>
             </li>
-            <li className="flex items-start">
-              <Shield className="w-6 h-6 text-logcol1 mr-2 flex-shrink-0 mt-1" />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">
-                  Préparation minutieuse
-                </h3>
-                <p className="text-gray-600">
-                  Une analyse préalable des lieux et des risques permet une
-                  planification et une exécution parfaites.
-                </p>
-              </div>
-            </li>
+            
           </ul>
         </motion.div>
 

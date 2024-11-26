@@ -23,35 +23,35 @@ const services = [
     description:
       "Nous offrons des services spécialisés pour gérer les foules et contrôler les accès, garantissant une circulation fluide et sécurisée dans des environnements à forte densité.",
     image: "/assets/controle-d'acces.jpg",
-    link: "/",
+    link: "/services/gestion-de-foule",
   },
   {
     title: "Sécurisation des Sites Sensibles, Sièges Sociaux et Chantiers",
     description:
       "Nos services de sécurisation protègent vos sites sensibles, sièges sociaux et chantiers contre les intrusions, vols et actes de vandalisme.",
     image: "/assets/surveillance-incendie-sieges-sociaux.jpg",
-    link: "/services/surveillance",
+    link: "/services/securisation-des-sites-sensibles",
   },
   {
     title: "Maîtres-chiens",
     description:
       "Nos équipes de maîtres-chiens offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
     image: "/assets/maitre-chien-securite-privee.jpg",
-    link: "/",
+    link: "/services/maitres-chiens",
   },
   {
     title: "Sécurité Incendie",
     description:
       "Nos services de sécurité incendie garantissent la conformité aux réglementations et minimisent les risques liés aux incendies dans vos locaux.",
     image: "/assets/fiche-metier-agent-securite-incendie.jpg",
-    link: "/services/alarm-response",
+    link: "/services/securite-incendie",
   },
   {
     title: "Sécurité Boutiques, Maisons de Luxe et Grandes Surfaces",
     description:
       "Nos services de sécurité pour boutiques, maisons de luxe et grandes surfaces garantissent la protection de vos produits, clients et votre image, avec des solutions adaptées et efficaces.",
     image: "/assets/sec-hotel-de-luxe.jpg",
-    link: "/services/security-consulting",
+    link: "/services/securite-boutiques",
   },
 ];
 
