@@ -16,7 +16,9 @@ export default {
         bg: "#f7f7f7",
         navtext:"#1f2d3a",
         primtext:"#1f2937",
-        sectext:"#4b5563"
+        sectext:"#4b5563",
+        logcol1:"#004aadff",
+        logcol2:"#ae2829ff"
       },
     },
   },

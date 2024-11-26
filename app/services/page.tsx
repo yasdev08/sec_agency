@@ -1,20 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import {
-  ArrowLeft,
-  Shield,
-  Users,
-  Eye,
-  Lock,
-  Briefcase,
-  Car,
-  Scale,
-  Bell,
-  FileCheck,
-} from "lucide-react";
-import { animate, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
+import { ChevronRight } from "lucide-react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -23,51 +12,45 @@ const fadeIn = {
 };
 const services = [
   {
-    icon: Shield,
-    title: "Personal Protection",
+    title: "Sécurité événementielle",
     description:
-      "Tailored security solutions for individuals and families, ensuring peace of mind in any situation.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "/services/personal-protection",
+      "Confiez l'accueil et la sécurité de vos événements à notre équipe expérimentée.",
+    image: "/assets/agents-securite-evenementielle-paris.jpg",
+    link: "/services/securite-evenementielle",
   },
   {
-    icon: Users,
-    title: "Event Security",
+    title: "Gestion de Foule et Contrôle d’Accès",
     description:
-      "Comprehensive security measures for events of all sizes, from corporate gatherings to large-scale festivals.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "/services/event-security",
+      "Nous offrons des services spécialisés pour gérer les foules et contrôler les accès, garantissant une circulation fluide et sécurisée dans des environnements à forte densité.",
+    image: "/assets/controle-d'acces.jpg",
+    link: "/",
   },
   {
-    icon: Eye,
-    title: "Surveillance",
+    title: "Sécurisation des Sites Sensibles, Sièges Sociaux et Chantiers",
     description:
-      "State-of-the-art monitoring and surveillance systems to protect your property and assets 24/7.",
-    image: "/placeholder.svg?height=400&width=600",
+      "Nos services de sécurisation protègent vos sites sensibles, sièges sociaux et chantiers contre les intrusions, vols et actes de vandalisme.",
+    image: "/assets/surveillance-incendie-sieges-sociaux.jpg",
     link: "/services/surveillance",
   },
   {
-    icon: Lock,
-    title: "Cybersecurity",
+    title: "Maîtres-chiens",
     description:
-      "Advanced digital protection services to safeguard your sensitive information and online presence.",
-    image: "/placeholder.svg?height=400&width=600",
-    link: "/services/cybersecurity",
+      "Nos équipes de maîtres-chiens offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
+    image: "/assets/maitre-chien-securite-privee.jpg",
+    link: "/",
   },
   {
-    icon: Bell,
-    title: "Alarm Response",
+    title: "Sécurité Incendie",
     description:
-      "Rapid response teams ready to investigate and address any security alerts at your property.",
-    image: "/placeholder.svg?height=400&width=600",
+      "Nos services de sécurité incendie garantissent la conformité aux réglementations et minimisent les risques liés aux incendies dans vos locaux.",
+    image: "/assets/fiche-metier-agent-securite-incendie.jpg",
     link: "/services/alarm-response",
   },
   {
-    icon: FileCheck,
-    title: "Security Consulting",
+    title: "Sécurité Boutiques, Maisons de Luxe et Grandes Surfaces",
     description:
-      "Expert advice and strategies to enhance your existing security measures and protocols.",
-    image: "/placeholder.svg?height=400&width=600",
+      "Nos services de sécurité pour boutiques, maisons de luxe et grandes surfaces garantissent la protection de vos produits, clients et votre image, avec des solutions adaptées et efficaces.",
+    image: "/assets/sec-hotel-de-luxe.jpg",
     link: "/services/security-consulting",
   },
 ];
@@ -85,18 +68,18 @@ export default function ServicesPage() {
           className="text-4xl md:text-5xl font-bold mb-8 text-primtext text-center"
           variants={fadeIn}
         >
-          Our Services
+          Nos Services
         </motion.h1>
 
         <motion.p
-          className="text-sectext text-xl mb-16 text-center max-w-3xl mx-auto"
+          className="text-sectext text-xl mb-16 text-center max-w-5xl mx-auto"
           variants={fadeIn}
         >
-          At Secure Solutions, we offer a comprehensive range of security
-          services designed to meet the diverse needs of our clients. Our team
-          of experienced professionals utilizes cutting-edge technology and
-          proven methodologies to deliver unparalleled protection and peace of
-          mind.
+          Chez Cpservice, nous offrons une gamme complète de services de
+          sécurité conçus pour répondre aux divers besoins de nos clients. Notre
+          équipe de professionnels expérimentés utilise une technologie de
+          pointe et des méthodologies éprouvées pour offrir une protection et
+          une tranquillité d'esprit inégalées.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -105,41 +88,50 @@ export default function ServicesPage() {
               key={index}
               className="bg-white p-6 rounded-lg border-2 shadow-lg overflow-hidden"
               variants={fadeIn}
-              whileHover={{ scale: 1.03, borderColor: "#ef4444" }}
+              whileHover={{ scale: 1.03, borderColor: "#ae2829ff" }}
               whileTap={{ scale: 0.98 }}
             >
               <Link href={service.link}>
-              <div className="relative h-48">
-                <Image src={service.image}
-                alt={service.title}
-                layout="fill"
-                objectFit="cover"                
-                />
-              </div>
-              <div>
-                <service.icon className="w-12 h-12 mb-4 text-red-500" />
-                <h2 className="text-xl font-semibold mb-2">{service.title}</h2>
-                <p className="text-sectext">{service.description}</p>
-              </div>
+                <div className="relative h-72">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-xl font-semibold mt-6 mb-2">
+                    {service.title}
+                  </h2>
+                  <p className="text-sectext">{service.description}</p>
+                </div>
+                <p className="text-sm inline-flex  text-logcol2">
+                En savoir plus<ChevronRight />
+                </p>
               </Link>
             </motion.div>
           ))}
         </div>
 
-        <motion.div 
-          className="mt-20 bg-blue-600 text-white rounded-lg p-8 shadow-xl"
+        <motion.div
+          className="mt-20 bg-logcol1 text-white rounded-lg p-8 shadow-xl"
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-bold mb-4">Need a Customized Solution?</h2>
+          <h2 className="text-3xl font-bold mb-4">
+            Prêt à Améliorer Votre Sécurité Personnelle?
+          </h2>
           <p className="text-lg mb-6">
-            Our team of experts is ready to create a tailored security plan that meets your specific needs.
+            Contactez-nous dès maintenant pour discuter de vos besoins de
+            protection personnelle et recevez un plan de sécurité personnalisé.{" "}
           </p>
-          <Link href="/#contact" className="bg-white text-blue-600 px-8 py-2 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
-            Contact Us
+          <Link
+            href="/#contact"
+            className="bg-white text-logcol1 px-8 py-2 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
+          >
+            Contactez-nous
           </Link>
         </motion.div>
-
-        
       </motion.section>
     </div>
   );

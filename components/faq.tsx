@@ -9,34 +9,39 @@ export default function Faq() {
 
   const faqs = [
     {
-      question: "What types of security services do you offer?",
+      question: "Vos agents sont-ils formés et certifiés ?",
       answer:
-        "We offer a wide range of security services including personal protection, event security, surveillance, access control, corporate security, and mobile patrols. Our services are tailored to meet the specific needs of individuals, businesses, and organizations.",
+        "Oui, tous nos agents sont formés, certifiés et disposent d'une expérience dans les domaines de la sécurité, souvent issue des forces de l’ordre ou de l’armée.",
     },
     {
-      question: "How experienced are your security personnel?",
+      question: "Proposez-vous des services de sécurité personnalisés ?",
       answer:
-        "Our security personnel are highly trained professionals with diverse backgrounds in law enforcement, military, and private security. Many have over 10 years of experience in the field. We also provide ongoing training to ensure our team stays up-to-date with the latest security practices and technologies.",
+        "Absolument. Nous réalisons une analyse approfondie de vos besoins pour créer une solution sur mesure adaptée à votre situation.",
     },
     {
-      question: "Do you provide 24/7 security services?",
+      question: "Êtes-vous disponibles 24/7 ?",
       answer:
-        "Yes, we offer round-the-clock security services. Our team is available 24 hours a day, 7 days a week, 365 days a year to respond to your security needs and emergencies.",
+        "Oui, notre équipe est disponible à tout moment pour répondre à vos besoins, y compris en urgence.",
     },
     {
-      question: "How do you ensure the quality of your security services?",
+      question: "Intervenez-vous dans toute la France ?",
       answer:
-        "We maintain high standards through rigorous hiring processes, continuous training, regular performance evaluations, and client feedback. We also utilize advanced technology and follow industry best practices to ensure the highest quality of service.",
+        "Oui, nous proposons nos services partout en France, avec une capacité d’intervention rapide.",
     },
     {
-      question: "Can you provide security for special events?",
+      question: "Comment puis-je obtenir un devis ?",
       answer:
-        "Absolutely. We specialize in event security for gatherings of all sizes, from small corporate functions to large public events. Our team will work with you to develop a comprehensive security plan tailored to your event's specific needs.",
+        "Vous pouvez nous contacter via notre formulaire en ligne, par e-mail ou par téléphone. Nous vous répondrons rapidement avec une proposition adaptée à vos besoins.",
     },
     {
-      question: "How do I get started with your services?",
+      question: "Offrez-vous une garantie sur vos services ?",
       answer:
-        "Getting started is easy. Simply contact us through our website or give us a call. We'll schedule a consultation to discuss your security needs, assess your situation, and provide a customized security solution.",
+        "Nous nous engageons à fournir un service de qualité avec des résultats mesurables. La satisfaction de nos clients est notre priorité.",
+    },
+    {
+      question: "Travaillez-vous avec des technologies avancées ?",
+      answer:
+        "Oui, nous utilisons des systèmes de vidéosurveillance, des dispositifs de contrôle d’accès biométriques et d’autres technologies innovantes pour renforcer nos services.",
     },
   ];
 

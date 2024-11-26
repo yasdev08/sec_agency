@@ -7,13 +7,13 @@ export default function Wcu(){
     return(
     <section className="py-20 bg-bg">
         <div className="container mx-auto px-4 my-6">
-          <h2 className="text-3xl text-navtext font-bold mb-20 text-center">Why Choose Us</h2>
+          <h2 className="text-3xl text-navtext font-bold mb-20 text-center">Pourquoi Choisir Nous?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ml-4">
             {[
-              { icon: Shield, title: 'Expertise', description: 'Over 20 years of experience in the security industry.' },
-              { icon: Users, title: 'Trained Professionals', description: 'Our team consists of ex-military and law enforcement experts.' },
-              { icon: Eye, title: 'Advanced Technology', description: 'Utilizing cutting-edge security technology and equipment.' },
-              { icon: Clock, title: '24/7 Availability', description: 'Round-the-clock service and rapid response times.' },
+              { icon: Shield, title: 'Professionnalisme et Expertise', description: "Notre équipe est composée d'agents expérimentés, issus des forces de l'ordre, de l'armée et de la sécurité privée." },
+              { icon: Users, title: 'Solutions Personnalisées', description: "Chaque client est unique. Nous analysons vos besoins spécifiques pour créer un plan de sécurité sur mesure, parfaitement adapté à vos attentes." },
+              { icon: Eye, title: 'Technologies de Pointe', description: "Nous intégrons des outils de sécurité avancés, tels que la vidéosurveillance, les systèmes de contrôle d'accès et les logiciels de gestion des risques, pour garantir une sécurité optimale." },
+              { icon: Clock, title: 'Disponibilité 24/7', description: "Nous sommes disponibles à tout moment pour répondre à vos besoins. Que ce soit pour une urgence ou une surveillance continue, notre équipe est toujours prête à intervenir." },
             ].map((feature, index) => (
               <motion.div
                 key={index}
@@ -22,10 +22,11 @@ export default function Wcu(){
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="flex items-start"
               >
-                <feature.icon className="w-8 h-8 mr-4 text-red-500 flex-shrink-0" />
+                <feature.icon className="w-8 h-8 mr-4 text-logcol2 flex-shrink-0" />
                 <div>
                   <h3 className="text-xl font-semibold mb-2 text-primtext">{feature.title}</h3>
                   <p className="text-sectext">{feature.description}</p>
+                  
                 </div>
               </motion.div>
             ))}

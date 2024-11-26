@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head>
         <link rel="icon" href="/favicon.ico" />
       </head>
@@ -39,8 +39,7 @@ export default function RootLayout({
         <footer className="bg-gray-800 py-8">
           <div className="container mx-auto px-4 text-white text-center">
             <p>
-              &copy; {new Date().getFullYear()} Secure Solutions. All rights
-              reserved.
+              &copy; {new Date().getFullYear()} © Cpservice. Tous droits réservés.
             </p>
           </div>
         </footer>

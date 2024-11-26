@@ -54,7 +54,7 @@ export default function Contactform() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="from_name" className="block mb-2 text-primtext">
-                  Name
+                  Nom Complet
                 </label>
                 <input
                   type="text"
@@ -62,13 +62,13 @@ export default function Contactform() {
                   value={from_name}
                   onChange={(e) => setFrom_name(e.target.value)}
                   required
-                  placeholder="Please Enter Your Name"
+                  placeholder="Veuillez Entrez Votre Nom"
                   className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
               </div>
               <div>
                 <label htmlFor="from_number" className="block mb-2 text-primtext">
-                  Phone
+                  Numéro Téléphone
                 </label>
                 <input
                   type="tel"
@@ -76,7 +76,7 @@ export default function Contactform() {
                   value={from_number}
                   onChange={(e) => setFrom_number(e.target.value)}
                   required
-                  placeholder="Type Your Phone Number"
+                  placeholder="Tapez Votre Numéro de Téléphone"
                   className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
               </div>
@@ -89,7 +89,7 @@ export default function Contactform() {
                   id="from_email"
                   value={from_email}
                   onChange={(e) => setFrom_email(e.target.value)}
-                  placeholder="Type your E-mail"
+                  placeholder="Tapez votre E-mail"
                   required
                   className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
@@ -102,7 +102,7 @@ export default function Contactform() {
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Please type your message here ..."
+                  placeholder="Taper votre message"
                   required
                   className="w-full px-4 py-2 rounded bg-bg text-sectext h-32 border-gray-500 border-2"
                 ></textarea>
@@ -111,9 +111,9 @@ export default function Contactform() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-logcol2 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-logcol2"
               >
-                Send Message
+                Envoyer un message
                 <Send className="ml-2 -mr-1 h-5 w-5 " aria-hidden="true" />
               </motion.button>
               
@@ -123,7 +123,7 @@ export default function Contactform() {
           <div className="mt-8 text-primtext font-medium">
             <div className="space-y-4 ">
               <div className="flex items-center">
-                <Mail className="w-6 h-6 mr-4 text-red-500" />
+                <Mail className="w-6 h-6 mr-4 text-logcol2" />
                 <Link href="mailto:contact@cpservice.pro" legacyBehavior>
                   <a target="_blank" rel="noopener noreferrer">
                     <span>contact@cpservice.pro</span>
@@ -131,7 +131,7 @@ export default function Contactform() {
                 </Link>
               </div>
               <div className="flex items-center">
-                <Phone className="w-6 h-6 mr-4 text-red-500" />
+                <Phone className="w-6 h-6 mr-4 text-logcol2" />
                 <Link href="tel:+33623860657" legacyBehavior>
                   <a target="_blank" rel="noopener noreferrer">
                     <span>+33 (623) 860-657</span>
@@ -139,7 +139,7 @@ export default function Contactform() {
                 </Link>
               </div>
               <div className="flex items-center">
-                <MapPin className="w-6 h-6 mr-4 text-red-500" />
+                <MapPin className="w-6 h-6 mr-4 text-logcol2" />
                 <Link
                   target="_blank"
                   href="https://www.google.com/maps/place/107B+Rue+Henri+Barbusse,+93300+Aubervilliers,+France/@48.9099951,2.3908297,17z/data=!3m1!4b1!4m6!3m5!1s0x47e66c39260a5f1d:0x1e011a53d755f9c7!8m2!3d48.9099951!4d2.3908297!16s%2Fg%2F11c0pyx14b?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
