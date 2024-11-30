@@ -130,7 +130,7 @@ export default function Seceven() {
           </p>
           <Link
             href="/#contact"
-            className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
+            className="bg-white text-logcol1 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
           >
             Contactez-nous
           </Link>
