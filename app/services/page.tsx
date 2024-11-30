@@ -33,10 +33,10 @@ const services = [
     link: "/services/securisation-des-sites-sensibles",
   },
   {
-    title: "Maîtres-chiens",
+    title: "Intervention et rondes avec agents cynophile",
     description:
-      "Nos équipes de maîtres-chiens offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
-    image: "/assets/maitre-chien-securite-privee.jpg",
+      "Nos équipes d'agents cynophile offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
+    image: "/assets/maitre-chien.jpeg",
     link: "/services/maitres-chiens",
   },
   {
@@ -59,7 +59,7 @@ export default function ServicesPage() {
   return (
     <div className="bg-gradient-to-b from-gray-100 to-bg min-h-screen">
       <motion.section
-        className="container mx-auto px-4 py-12"
+        className="container mx-auto px-4 py-20"
         initial="initial"
         animate="animate"
         variants={{ animate: { transition: { staggerChildren: 0.1 } } }}

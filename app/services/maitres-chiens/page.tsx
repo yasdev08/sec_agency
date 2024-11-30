@@ -32,7 +32,7 @@ export default function maitrechien() {
           className="text-4xl md:text-5xl font-bold text-center mb-8 text-gray-800"
           variants={fadeIn}
         >
-          Maîtres-chiens
+         Intervention et rondes avec agents cynophile
         </motion.h1>
 
         <motion.div

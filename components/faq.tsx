@@ -54,7 +54,7 @@ export default function Faq() {
 
 <section className="py-20 bg-white text-primtext">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold mb-12 text-center">Questions Fréquentes</h2>
           <div className="max-w-3xl mx-auto">
             {faqs.map((item, index) => (
               <div key={index} className="mb-4 bg-bg rounded-lg">

@@ -18,11 +18,11 @@ const stats = [
   { icon: Clock, value: '24/7', label: 'Support Disponible' },
 ]
 
-const teamMembers = [
+/* const teamMembers = [
   { name: 'Houari', role: 'PDG & Fondateur', image: '/assets/person-6.jpg' },
   { name: 'Mehdi B', role: 'Chef des Opérations', image: '/assets/person-6.jpg' },
   { name: 'Manel H', role: 'Chef de la Sécurité', image: '/assets/person-6.jpg' },
-]
+] */
 
 const valeurs = [
   "Une équipe qualifiée et dédiée, formée pour répondre aux situations les plus exigeantes.",
@@ -60,7 +60,7 @@ export default function About() {
         >
           <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/assets/portrait-male-security-guard-with-uniforaaam.jpg"
+              src="/assets/img1.jpg"
               alt="Secure Solutions Team"
               layout="fill"
               objectFit="cover"
@@ -114,7 +114,7 @@ export default function About() {
           ))}
         </motion.div>
 
-        <motion.h2 
+       {/*  <motion.h2 
           className="text-3xl font-semibold text-center mb-12 text-gray-800"
           variants={fadeIn}
         >
@@ -144,7 +144,7 @@ export default function About() {
               <p className="text-gray-600">{member.role}</p>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </motion.section>
     </div>
   )

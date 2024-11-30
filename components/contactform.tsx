@@ -1,15 +1,18 @@
+
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
+ 
 
 
 export default function Contactform() {
   const [from_name, setFrom_name] = useState("");
   const [from_email, setFrom_email] = useState("");
   const [message, setMessage] = useState("");
-  const [from_number, setFrom_number] =useState("");
+  const [from_number, setFrom_number] = useState("");
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +40,6 @@ export default function Contactform() {
           setFrom_number("");
           setFrom_email("");
           setMessage("");
-          
         },
         (error) => {
           console.log("Failed to send message:", error.text);
@@ -48,7 +50,9 @@ export default function Contactform() {
   return (
     <section className="py-20 bg-bg" id="contact">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-navtext text-center">Contact Us</h2>
+        <h2 className="text-3xl font-bold mb-12 text-navtext text-center">
+          Contact Us
+        </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -67,7 +71,10 @@ export default function Contactform() {
                 />
               </div>
               <div>
-                <label htmlFor="from_number" className="block mb-2 text-primtext">
+                <label
+                  htmlFor="from_number"
+                  className="block mb-2 text-primtext"
+                >
                   Numéro Téléphone
                 </label>
                 <input
@@ -81,7 +88,10 @@ export default function Contactform() {
                 />
               </div>
               <div>
-                <label htmlFor="from_email" className="block mb-2 text-primtext">
+                <label
+                  htmlFor="from_email"
+                  className="block mb-2 text-primtext"
+                >
                   Email
                 </label>
                 <input
@@ -116,7 +126,6 @@ export default function Contactform() {
                 Envoyer un message
                 <Send className="ml-2 -mr-1 h-5 w-5 " aria-hidden="true" />
               </motion.button>
-              
             </form>
           </div>
 
@@ -146,12 +155,13 @@ export default function Contactform() {
                 >
                   <span>107B Rue Henri Barbusse 93300 AUBERVILLIERS</span>
                 </Link>
+                
               </div>
-              
             </div>
           </div>
         </div>
       </div>
+      
     </section>
   );
 }

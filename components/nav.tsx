@@ -9,8 +9,8 @@ const navItems = [
   { href: "/", label: "Accueil" },
   { href: "/about", label: "à propos" },
   { href: "/services", label: "Services" },
-  { href: "/case-studies", label: "Cas d'études" },
-  { href: "/testimonials", label: "Testimoniales" },
+  /* { href: "/case-studies", label: "Cas d'études" }, */
+  { href: "/testimonials", label: "Avis" },
   { href: "./#contact", label: "Contact" },
 ];
 
@@ -73,7 +73,7 @@ export default function Nav() {
 
       {isOpen && (
         <div className="md:hidden" id="mobile-menu">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 mb-2">
             {navItems.map((item) => (
               <Link
                 key={item.href}

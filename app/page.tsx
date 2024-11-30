@@ -21,10 +21,10 @@ export default function Main() {
       <Wcu />
 
       {/* Case Studies Highlight Section */}
-      <Case />
+      {/* <Case /> */}
 
       {/* Team Section */}
-      <Team />
+      {/* <Team /> */}
 
       {/* FAQ Section */}
       <Faq/>
