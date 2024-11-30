@@ -102,7 +102,7 @@ export default function secdesites() {
         </motion.div>
 
         <motion.div
-          className="bg-blue-600 text-white rounded-lg p-8 shadow-xl text-center"
+          className="bg-logcol1 text-white rounded-lg p-8 shadow-xl text-center"
           variants={fadeIn}
         >
           <h2 className="text-3xl font-bold mb-4">
