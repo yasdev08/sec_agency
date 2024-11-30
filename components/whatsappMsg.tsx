@@ -72,6 +72,7 @@ export default function WhatsappMsg(){
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="whatsapp message"
                     className="fixed bottom-4 right-4 bg-green-500 text-white p-3 rounded-full shadow-lg hover:bg-green-600 transition duration-300"
                   >
                     {whatsappIco}
