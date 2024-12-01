@@ -7,7 +7,7 @@ export default function Wcu(){
     return(
     <section className="py-20 bg-bg">
         <div className="container mx-auto px-4 my-6">
-          <h2 className="text-3xl text-navtext font-bold mb-20 text-center">Pourquoi Choisir Nous?</h2>
+          <h2 className="text-3xl text-navtext font-bold mb-20 text-center">Pourquoi Nous Choisir?</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ml-4">
             {[
               { icon: Shield, title: 'Professionnalisme et Expertise', description: "Notre équipe est composée d'agents expérimentés, issus des forces de l'ordre, de l'armée et de la sécurité privée." },

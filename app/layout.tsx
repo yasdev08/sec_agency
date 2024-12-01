@@ -61,7 +61,7 @@ export default function RootLayout({
             <Link href="/mentions-legales" className="font-bold underline hover:text-logcol2">
               Mentions légales
             </Link>
-            <Link href="/" className="font-bold underline hover:text-logcol2">
+            <Link href="/cgu" className="font-bold underline hover:text-logcol2">
               CGU
             </Link>
             </div>

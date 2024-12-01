@@ -41,7 +41,7 @@ export default function maitrechien() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
-              src="/assets/maitre-chien-securite-privee.jpg"
+              src="/assets/maitre-chien.jpeg"
               alt="Personal Protection"
               width={600}
               height={400}
@@ -111,11 +111,10 @@ export default function maitrechien() {
             protection personnelle et recevez un plan de sécurité personnalisé.
           </p>
           <Link
-            href="/#contact"
+            href="/devis"
             className="bg-white text-logcol1 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
           >
-            Contactez-nous
-          </Link>
+Prendez un Devis          </Link>
         </motion.div>
       </motion.section>
     </div>

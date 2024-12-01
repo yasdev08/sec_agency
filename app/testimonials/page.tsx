@@ -28,7 +28,7 @@ const testimonials = [
     image: "/assets/prof_icon.png",
     quote:
       "Les services discrets et efficaces de CPService ont transformé la sécurité de nos résidences haut de gamme. Une équipe de confiance.",
-    rating: 5,
+    rating: 4,
     service: "Sécurité pour Maisons de Luxe",
   },
   {
@@ -73,7 +73,7 @@ const testimonials = [
     image: "/assets/prof_icon.png",
     quote:
       "Avec CPService, la gestion des incendies et des urgences est entre de bonnes mains. Leur formation et leur équipement sont au top.",
-    rating: 5,
+    rating: 4,
     service: "Sécurité Incendie",
   },
 ];
@@ -190,7 +190,7 @@ export default function TestimonialsPage() {
           className="mt-20 bg-logcol1 hover:bg-blue-700 text-white rounded-lg p-8 shadow-xl"
           variants={fadeIn}
         >
-          <h2 className="text-3xl font-bold mb-8 text-center">Our Impact</h2>
+          <h2 className="text-3xl font-bold mb-8 text-center">Notre Impact</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {impactStats.map((stat, index) => (
               <div key={index} className="text-center">
@@ -210,7 +210,7 @@ export default function TestimonialsPage() {
           <p className="text-xl mb-8 max-w-2xl mx-auto">
           Rejoignez nos clients satisfaits et laissez-nous vous fournir des solutions de sécurité de premier plan adaptées à vos besoins.
           </p>
-          <Link href="/#contact" passHref>
+          <Link href="/devis" passHref>
             <button className="bg-logcol1 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full text-lg transition duration-300">
             Obtenir Un Devis Gratuit
             </button>

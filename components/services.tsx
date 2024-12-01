@@ -24,15 +24,15 @@ export default function Serv() {
               title: "Gestion de Foule et Contrôle d’Accès",
               description:
                 "Nous offrons des services spécialisés pour gérer les foules et contrôler les accès, garantissant une circulation fluide et sécurisée dans des environnements à forte densité.",
-              link: "/",
+              link: "/services/gestion-de-foule",
               image: "/assets/controle-d'acces.jpg",
             },
             {
-              title: "Maîtres-chiens",
+              title: "Intervention et rondes avec agents cynophile",
               description:
                 "Nos équipes de maîtres-chiens offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
-              link: "/",
-              image: "/assets/maitre-chien-securite-privee.jpg",
+              link: "/services/maitres-chiens",
+              image: "/assets/maitre-chien.jpeg",
             },
           ].map((service, index) => (
             <motion.div

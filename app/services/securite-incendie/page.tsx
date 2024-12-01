@@ -112,10 +112,10 @@ export default function secincendie() {
             protection personnelle et recevez un plan de sécurité personnalisé.
           </p>
           <Link
-            href="/#contact"
+            href="/devis"
             className="bg-white text-logcol1 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300"
           >
-            Contactez-nous
+            Prendez un Devis
           </Link>
         </motion.div>
       </motion.section>
