@@ -8,7 +8,7 @@ export default function Hero() {
   const images = [
     "/assets/maitre-chien.jpeg",
     "/assets/portrait-male-security-guard-with-uniform.jpg",
-    "/assets/security-agent.jpg",
+    "/assets/secuagent.jpg",
     "/assets/sec-agent.jpg",
     "assets/security-guards-workspace.jpg"
     
