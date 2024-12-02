@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '',
     },
-    sitemap: 'https://cpservice.com/sitemap.xml',
+    sitemap: 'https://cpservice.pro/sitemap.xml',
   }
 }
