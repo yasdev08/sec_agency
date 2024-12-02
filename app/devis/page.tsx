@@ -11,6 +11,7 @@ import {
   Mail,
   Phone,
   Timer,
+  TimerOff,
 } from "lucide-react";
 
 
@@ -22,7 +23,8 @@ export default function MultiStepForm() {
     email: "",
     numerotel: "",
     nbragent: "",
-    duree: "",
+    debutduree: "",
+    finduree:""
   });
 
   const serviceOptions = [
@@ -53,7 +55,7 @@ export default function MultiStepForm() {
       alert("Veuillez sélectionner au moins un service.");
       return;
     }
-    if (step === 2 && (!formData.nbragent || !formData.duree)) {
+    if (step === 2 && (!formData.nbragent || !formData.debutduree || !formData.finduree)) {
       alert("Veuillez remplir tous les champs requis.");
       return;
     }
@@ -106,7 +108,8 @@ export default function MultiStepForm() {
             email: "",
             numerotel: "",
             nbragent: "",
-            duree: "",
+            debutduree: "",
+            finduree:"",
           });
           setStep(1);
         },
@@ -176,7 +179,10 @@ export default function MultiStepForm() {
               Entrez vos informations :
             </p>
             <div className="space-y-4">
+              <div>
+                <label htmlFor="nbragent"> Le nombre des agents :</label>
               <input
+              id="nbragent"
                 type="number"
                 name="nbragent"
                 placeholder="Nombre des agents *"
@@ -184,14 +190,31 @@ export default function MultiStepForm() {
                 onChange={handleChange}
                 className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
               />
+              </div>
+              <div>
+              <label htmlFor="debutduree">Le début de durée :</label>
               <input
-                type="number"
-                name="duree"
-                placeholder="La durée en heures*"
-                value={formData.duree}
+                id="debutduree"
+                type="date"
+                name="debutduree"
+                placeholder="Le début de durée *"
+                value={formData.debutduree}
                 onChange={handleChange}
                 className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
               />
+              </div>
+              <div>
+              <label htmlFor="finduree">La fin de durée :</label>
+              <input
+                id="finduree"
+                type="date"
+                name="finduree"
+                placeholder="La fin de durée *"
+                value={formData.finduree}
+                onChange={handleChange}
+                className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
+              />
+              </div>
             </div>
           </div>
         )}
@@ -210,6 +233,7 @@ export default function MultiStepForm() {
                 onChange={handleChange}
                 className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
               />
+              
               <input
                 type="text"
                 name="numerotel"
@@ -278,13 +302,22 @@ export default function MultiStepForm() {
                   {formData.nbragent || "Non spécifié"} Agents
                 </p>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
                   <Timer className="mr-2" color="#ae2829ff" />
-                  La Durée :
+                  Le début de Durée :
                 </strong>
                 <p className="text-lg">
-                  {formData.duree || "Non spécifié"} Heures
+                  {formData.debutduree || "Non spécifié"} 
+                </p>
+              </div>
+              <div className="flex justify-between items-center">
+                <strong className="text-sm text-gray-700 flex items-center">
+                  <TimerOff className="mr-2" color="#ae2829ff" />
+                  La fin de Durée :
+                </strong>
+                <p className="text-lg">
+                  {formData.finduree || "Non spécifié"} 
                 </p>
               </div>
             </div>
