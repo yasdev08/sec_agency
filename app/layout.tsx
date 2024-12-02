@@ -12,7 +12,7 @@ const montserrat = Montserrat({ subsets: ["latin"] });
 export const metadata = {
   title: "CpService - Votre Expert en Sécurité Privée en France",
   description:
-    "CPService offre des solutions de sécurité sur mesure : vigiles, sécurité événementielle, gestion de foule, protection rapprochée, sécurité incendie, et bien plus. Faites confiance à nos experts pour protéger vos biens, vos événements et vos espaces sensibles.",
+    "CPService offre des solutions de sécurité : vigiles, sécurité événementielle, gestion de foule, et protection rapprochée. Faites confiance à nos experts.",
 };
 
 export default function RootLayout({
