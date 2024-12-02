@@ -32,7 +32,7 @@ export default function Serv() {
               description:
                 "Nos équipes de maîtres-chiens offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
               link: "/services/maitres-chiens",
-              image: "/assets/maitre-chien.jpeg",
+              image: "/assets/maitre-chien.webp",
             },
           ].map((service, index) => (
             <motion.div

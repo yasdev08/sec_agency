@@ -36,7 +36,7 @@ const services = [
     title: "Intervention et rondes avec agents cynophile",
     description:
       "Nos équipes d'agents cynophile offrent une solution efficace pour la surveillance et la dissuasion. La présence d’un chien bien formé augmente considérablement le niveau de sécurité.",
-    image: "/assets/maitre-chien.jpeg",
+    image: "/assets/maitre-chien.webp",
     link: "/services/maitres-chiens",
   },
   {

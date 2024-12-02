@@ -6,11 +6,11 @@ import { useEffect, useState } from "react";
 export default function Hero() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const images = [
-    "/assets/maitre-chien.jpeg",
-    "/assets/portrait-male-security-guard-with-uniform.jpg",
+    "/assets/maitre-chien.webp",
+    "/assets/cps1.jpg",
     "/assets/secuagent.jpg",
     "/assets/sec-agent.jpg",
-    "assets/security-guards-workspace.jpg"
+    "assets/cps3.jpg"
     
   ];
 

@@ -41,7 +41,7 @@ export default function maitrechien() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
-              src="/assets/maitre-chien.jpeg"
+              src="/assets/maitre-chien.webp"
               alt="Personal Protection"
               width={600}
               height={400}

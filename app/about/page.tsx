@@ -60,7 +60,7 @@ export default function About() {
         >
           <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
             <Image
-              src="/assets/img1.jpg"
+              src="/assets/cps.jpg"
               alt="Secure Solutions Team"
               layout="fill"
               objectFit="cover"
