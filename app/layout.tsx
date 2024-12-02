@@ -68,8 +68,8 @@ export default function RootLayout({
           </div>
         </footer>
 
-        <Analytics />
-        <SpeedInsights />
+        <Analytics/>
+        <SpeedInsights/>
       </body>
       <GoogleAnalytics gaId="G-M0LRPKVMCK" />
     </html>

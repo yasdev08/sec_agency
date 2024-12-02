@@ -10,7 +10,6 @@ export default function Hero() {
     "/assets/cps1.jpg",
     "/assets/secuagent.jpg",
     "/assets/sec-agent.jpg",
-    "assets/cps3.jpg"
     
   ];
 
@@ -26,6 +25,7 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gray-900">
       <AnimatePresence initial={false}>
         <motion.img
+        srcSet=""
           key={currentImageIndex}
           src={images[currentImageIndex]}
           alt={`Security background ${currentImageIndex + 1}`}
