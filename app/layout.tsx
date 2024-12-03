@@ -25,6 +25,8 @@ export default function RootLayout({
       <GoogleTagManager gtmId={"GTM-5W9F7HVG"} />
       <head>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="canonical" href="https://www.cpservice.pro" />
+
       </head>
       <body
         className={`${montserrat.className} bg-gray-100 text-gray-900   min-h-screen flex flex-col`}
