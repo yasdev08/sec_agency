@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/(.*)',
-        destination: 'https://www.cpservice.pro/:path*',
+        destination: 'https://www.cpservice.pro/',
         permanent: true, // Change this to true for a 308/301 redirect
       },
     ];
