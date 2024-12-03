@@ -17,14 +17,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: 'https://cpservice.pro/services',
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
+      changeFrequency: 'monthly',
+      priority: 0.8,
     },
     {
         url: 'https://cpservice.pro/testimonials',
         lastModified: new Date(),
         changeFrequency: 'monthly',
-        priority: 0.3,
+        priority: 0.5,
     },
     {
         url: 'https://cpservice.pro/devis',
