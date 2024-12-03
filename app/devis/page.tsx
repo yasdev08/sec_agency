@@ -14,18 +14,19 @@ import {
   TimerOff,
 } from "lucide-react";
 
-
 export default function MultiStepForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     service: [] as string[],
+    agentsPerService: {} as Record<string, number>,
     Nomdesociete: "",
     email: "",
     numerotel: "",
-    nbragent: "",
     debutduree: "",
-    finduree:""
+    finduree: "",
+    note:"",
   });
+ 
 
   const serviceOptions = [
     {
@@ -55,7 +56,10 @@ export default function MultiStepForm() {
       alert("Veuillez sélectionner au moins un service.");
       return;
     }
-    if (step === 2 && (!formData.nbragent || !formData.debutduree || !formData.finduree)) {
+    if (
+      step === 2 &&
+      ( !formData.debutduree || !formData.finduree)
+    ) {
       alert("Veuillez remplir tous les champs requis.");
       return;
     }
@@ -80,21 +84,50 @@ export default function MultiStepForm() {
 
   const toggleService = (service: string) => {
     setFormData((prev) => {
-      const newServices = prev.service.includes(service)
-        ? prev.service.filter((s) => s !== service) // Remove if already selected
-        : [...prev.service, service]; // Add if not selected
-      return { ...prev, service: newServices };
+      const isServiceSelected = prev.service.includes(service);
+      const updatedServices = isServiceSelected
+        ? prev.service.filter((s) => s !== service)
+        : [...prev.service, service];
+
+      const updatedAgentsPerService = { ...prev.agentsPerService };
+      if (isServiceSelected) {
+        delete updatedAgentsPerService[service];
+      } else {
+        updatedAgentsPerService[service] = 1; // Default to 1 agent when adding a service
+      }
+
+      return {
+        ...prev,
+        service: updatedServices,
+        agentsPerService: updatedAgentsPerService,
+      };
     });
   };
+  const formatAgentsPerService = (agentsPerService: Record<string, number | undefined>) => {
+    if (!agentsPerService || Object.keys(agentsPerService).length === 0) {
+      return "Non spécifié";
+    }
+    return Object.entries(agentsPerService)
+      .map(([service, count]) => `${service}: ${count || 0} agent(s)`)
+      .join(", ");
+  };
+
 
   const handleSubmit = (e: React.FormEvent) => {
+    const formattedAgentsPerService = formatAgentsPerService(formData.agentsPerService);
+
+    
+    const emailData = {
+      ...formData,
+      nbragent:  formattedAgentsPerService || "non spécifié",
+    };
     e.preventDefault();
 
     emailjs
       .send(
         "default_service",
         "template_8j6n657",
-        formData,
+        emailData,
         "BznnDkit0tmvMkfep"
       )
       .then(
@@ -104,12 +137,13 @@ export default function MultiStepForm() {
           // Reset form fields
           setFormData({
             service: [],
+            agentsPerService: {},
             Nomdesociete: "",
             email: "",
             numerotel: "",
-            nbragent: "",
             debutduree: "",
-            finduree:"",
+            finduree: "",
+            note: "",
           });
           setStep(1);
         },
@@ -150,24 +184,50 @@ export default function MultiStepForm() {
           <div>
             <p className="text-lg font-medium mb-4">Quel est votre besoin ?</p>
             <div className="space-y-4">
-              {serviceOptions.map((option, index) => (
-                <button
-                  key={index}
-                  onClick={() => toggleService(option.name)}
-                  className={`flex items-center p-4 w-full rounded-lg  text-left border ${
-                    formData.service.includes(option.name)
-                      ? "border-b-4 border-logcol2 "
-                      : "border-gray-700"
-                  } hover:border-logcol2 transition`}
-                >
-                  <Image
-                    src={option.icon}
-                    width={50}
-                    height={50}
-                    alt={option.alt}
-                  />
-                  <span>{option.name}</span>
-                </button>
+              {serviceOptions.map((option) => (
+                <div key={option.name} className="border border-gray-700 rounded-lg p-4 hover:border-logcol2">
+                  {/* Service selection button */}
+                  <button
+                    onClick={() => toggleService(option.name)}
+                    className={`flex items-center w-full  text-left ${
+                      formData.service.includes(option.name)
+                        ? "border-b-4 border-logcol2"
+                        : "border-gray-700"
+                    } hover:border-logcol2 transition`}
+                  >
+                    <Image
+                      src={option.icon}
+                      width={50}
+                      height={50}
+                      alt={option.alt}
+                    />
+                    <span className="ml-4">{option.name}</span>
+                  </button>
+
+                  {/* Agent input field displayed below the service box */}
+                  {formData.service.includes(option.name) && (
+                    <div className="mt-2">
+                      <label className="flex items-center space-x-2">
+                        <span className="text-sm">Nombre d'agents :</span>
+                        <input
+                          type="number"
+                          min="1"
+                          className="w-20 p-2 border rounded"
+                          value={formData.agentsPerService[option.name] || ""}
+                          onChange={(e) =>
+                            setFormData((prev) => ({
+                              ...prev,
+                              agentsPerService: {
+                                ...prev.agentsPerService,
+                                [option.name]: Number(e.target.value),
+                              },
+                            }))
+                          }
+                        />
+                      </label>
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </div>
@@ -180,40 +240,28 @@ export default function MultiStepForm() {
             </p>
             <div className="space-y-4">
               <div>
-                <label htmlFor="nbragent"> Le nombre des agents :</label>
-              <input
-              id="nbragent"
-                type="number"
-                name="nbragent"
-                placeholder="Nombre des agents *"
-                value={formData.nbragent}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
-              />
+                <label htmlFor="debutduree">Le début de durée :</label>
+                <input
+                  id="debutduree"
+                  type="datetime-local"
+                  name="debutduree"
+                  placeholder="Le début de durée *"
+                  value={formData.debutduree}
+                  onChange={handleChange}
+                  className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
+                />
               </div>
               <div>
-              <label htmlFor="debutduree">Le début de durée :</label>
-              <input
-                id="debutduree"
-                type="date"
-                name="debutduree"
-                placeholder="Le début de durée *"
-                value={formData.debutduree}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
-              />
-              </div>
-              <div>
-              <label htmlFor="finduree">La fin de durée :</label>
-              <input
-                id="finduree"
-                type="date"
-                name="finduree"
-                placeholder="La fin de durée *"
-                value={formData.finduree}
-                onChange={handleChange}
-                className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
-              />
+                <label htmlFor="finduree">La fin de durée :</label>
+                <input
+                  id="finduree"
+                  type="datetime-local"
+                  name="finduree"
+                  placeholder="La fin de durée *"
+                  value={formData.finduree}
+                  onChange={handleChange}
+                  className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
+                />
               </div>
             </div>
           </div>
@@ -233,7 +281,7 @@ export default function MultiStepForm() {
                 onChange={handleChange}
                 className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
               />
-              
+
               <input
                 type="text"
                 name="numerotel"
@@ -298,9 +346,15 @@ export default function MultiStepForm() {
                   <Hash className="mr-2" color="#ae2829ff" />
                   Nombre d'agents :
                 </strong>
-                <p className="text-lg">
-                  {formData.nbragent || "Non spécifié"} Agents
-                </p>
+                
+                  {Object.entries(formData.agentsPerService).map(
+                    ([service, count]) => (
+                      <div key={service}>
+                        {service}: {count}
+                      </div>
+                    )
+                  )}
+                
               </div>
               <div className="flex justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
@@ -308,7 +362,7 @@ export default function MultiStepForm() {
                   Le début de Durée :
                 </strong>
                 <p className="text-lg">
-                  {formData.debutduree || "Non spécifié"} 
+                  {formData.debutduree || "Non spécifié"}
                 </p>
               </div>
               <div className="flex justify-between items-center">
@@ -316,10 +370,24 @@ export default function MultiStepForm() {
                   <TimerOff className="mr-2" color="#ae2829ff" />
                   La fin de Durée :
                 </strong>
-                <p className="text-lg">
-                  {formData.finduree || "Non spécifié"} 
-                </p>
+                <p className="text-lg">{formData.finduree || "Non spécifié"}</p>
               </div>
+              
+              <div>
+                <label htmlFor="note" className="block mb-2 text-primtext">
+                  Note :
+                </label>
+                <textarea
+                  id="note"
+                  name="note"
+                  value={formData.note}
+                  onChange={handleChange}
+                  placeholder="Taper votre votre note (facultatif):"
+                  className="w-full px-4 py-2 rounded bg-bg text-sectext h-32 border-gray-500 border-2"
+                ></textarea>
+              </div>
+                  
+              
             </div>
           </div>
         )}
@@ -363,17 +431,15 @@ export default function MultiStepForm() {
             width={32}
             height={32}
           />
-          
+
           <p className="text-sm font-semibold ">
-            
-          <span className="text-yellow-400">★★★★★</span>
+            <span className="text-yellow-400">★★★★★</span>
           </p>
         </div>
 
         {/* Devis Gratuit Section */}
         <div className="flex items-center space-x-4 mr-4">
-          <FileText width={32}
-            height={32}  />
+          <FileText width={32} height={32} />
           <div>
             <p className="text-sm font-semibold">Devis gratuit</p>
             <p className="text-xs text-gray-400">sans engagement</p>
@@ -382,10 +448,7 @@ export default function MultiStepForm() {
 
         {/* Rapide et Gratuit Section */}
         <div className="flex items-center space-x-4 mr-4">
-          <Gauge
-            width={32}
-            height={32}
-          />
+          <Gauge width={32} height={32} />
           <div>
             <p className="text-sm  font-semibold">Rapide et gratuit</p>
             <p className="text-xs text-gray-400">de 2h à 24h</p>
