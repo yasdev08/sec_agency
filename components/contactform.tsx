@@ -150,7 +150,8 @@ export default function Contactform() {
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 mr-4 text-logcol2" />
                 <Link
-                  target="_blank"
+                  target="_blank "
+                  rel="noopener noreferrer"
                   href="https://www.google.com/maps/place/107B+Rue+Henri+Barbusse,+93300+Aubervilliers,+France/@48.9099951,2.3908297,17z/data=!3m1!4b1!4m6!3m5!1s0x47e66c39260a5f1d:0x1e011a53d755f9c7!8m2!3d48.9099951!4d2.3908297!16s%2Fg%2F11c0pyx14b?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D"
                 >
                   <span>107B Rue Henri Barbusse 93300 AUBERVILLIERS</span>

@@ -58,7 +58,7 @@ const legalSections = [
         <br />
         <b>Adresse </b>: États-Unis
         <br />
-        <b>Contact </b>: <a href="https://vercel.com/contact" target="_blank"><b>www.vercel.com/contact</b></a>
+        <b>Contact </b>: <a href="https://vercel.com/contact" rel="noreferrer" target="_blank"><b>www.vercel.com/contact</b></a>
       </>
     ),
   },
