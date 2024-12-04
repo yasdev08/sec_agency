@@ -166,7 +166,7 @@ export default function LegalNoticePage() {
           Si vous avez des questions ou des préoccupations concernant nos politiques juridiques, n'hésitez pas à nous contacter.
 
           </p>
-          <Link href="/contact">
+          <Link href="/#contact">
             <button className="bg-white text-logcol1 px-6 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors duration-300">
             Contactez nous
             </button>
