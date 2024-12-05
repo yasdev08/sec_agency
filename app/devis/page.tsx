@@ -9,6 +9,7 @@ import {
   Gauge,
   Hash,
   Mail,
+  Notebook,
   Phone,
   Timer,
   TimerOff,
@@ -24,9 +25,8 @@ export default function MultiStepForm() {
     numerotel: "",
     debutduree: "",
     finduree: "",
-    note:"",
+    note: "",
   });
- 
 
   const serviceOptions = [
     {
@@ -56,10 +56,7 @@ export default function MultiStepForm() {
       alert("Veuillez sélectionner au moins un service.");
       return;
     }
-    if (
-      step === 2 &&
-      ( !formData.debutduree || !formData.finduree)
-    ) {
+    if (step === 2 && (!formData.debutduree || !formData.finduree)) {
       alert("Veuillez remplir tous les champs requis.");
       return;
     }
@@ -92,7 +89,7 @@ export default function MultiStepForm() {
       const updatedAgentsPerService = { ...prev.agentsPerService };
       if (isServiceSelected) {
         delete updatedAgentsPerService[service];
-      } 
+      }
 
       return {
         ...prev,
@@ -101,7 +98,9 @@ export default function MultiStepForm() {
       };
     });
   };
-  const formatAgentsPerService = (agentsPerService: Record<string, number | undefined>) => {
+  const formatAgentsPerService = (
+    agentsPerService: Record<string, number | undefined>
+  ) => {
     if (!agentsPerService || Object.keys(agentsPerService).length === 0) {
       return "Non spécifié";
     }
@@ -110,14 +109,14 @@ export default function MultiStepForm() {
       .join(", ");
   };
 
-
   const handleSubmit = (e: React.FormEvent) => {
-    const formattedAgentsPerService = formatAgentsPerService(formData.agentsPerService);
+    const formattedAgentsPerService = formatAgentsPerService(
+      formData.agentsPerService
+    );
 
-    
     const emailData = {
       ...formData,
-      nbragent:  formattedAgentsPerService || "non spécifié",
+      nbragent: formattedAgentsPerService || "non spécifié",
     };
     e.preventDefault();
 
@@ -183,7 +182,10 @@ export default function MultiStepForm() {
             <p className="text-lg font-medium mb-4">Quel est votre besoin ?</p>
             <div className="space-y-4">
               {serviceOptions.map((option) => (
-                <div key={option.name} className="border border-gray-700 rounded-lg p-4 hover:border-logcol2">
+                <div
+                  key={option.name}
+                  className="border border-gray-700 rounded-lg p-4 hover:border-logcol2"
+                >
                   {/* Service selection button */}
                   <button
                     onClick={() => toggleService(option.name)}
@@ -248,10 +250,10 @@ export default function MultiStepForm() {
                   className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
                 />
               </div>
-              
+
               <div>
                 <label htmlFor="finduree">La fin de durée :</label>
-                <br/>
+                <br />
                 <input
                   id="finduree"
                   type="datetime-local"
@@ -307,14 +309,19 @@ export default function MultiStepForm() {
               Confirmez vos informations :
             </p>
             <div className="space-y-4">
-              <div className="flex justify-between items-center border-b border-logcol2 pb-2">
+              <div className="flex-col justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
                   {" "}
                   <ContactRound className="mr-2" color="#ae2829ff" /> Services :
                 </strong>
-                <p className="text-base">
-                  {formData.service.join(", ") || "Non spécifié"}
-                </p>
+
+                {formData.service.length > 0
+                  ? formData.service.map((service, index) => (
+                      <div key={index} className="my-1">
+                        {service}
+                      </div>
+                    ))
+                  : "Non spécifié"}
               </div>
               <div className="flex justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
@@ -340,20 +347,19 @@ export default function MultiStepForm() {
                 </strong>
                 <p className="text-lg">{formData.email || "Non spécifié"}</p>
               </div>
-              <div className="flex justify-between items-center border-b border-logcol2 pb-2">
+              <div className="flex-col justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
                   <Hash className="mr-2" color="#ae2829ff" />
                   Nombre d'agents :
                 </strong>
-                
-                  {Object.entries(formData.agentsPerService).map(
-                    ([service, count]) => (
-                      <div key={service}>
-                        {service}: {count}
-                      </div>
-                    )
-                  )}
-                
+
+                {Object.entries(formData.agentsPerService).map(
+                  ([service, count]) => (
+                    <div key={service} className="my-1">
+                      {service}: {count}
+                    </div>
+                  )
+                )}
               </div>
               <div className="flex justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
@@ -361,19 +367,20 @@ export default function MultiStepForm() {
                   Le début de Durée :
                 </strong>
                 <p className="text-lg">
-                  {formData.debutduree || "Non spécifié"}
+                  {formData.debutduree.replace('T',' à ') || "Non spécifié"}
                 </p>
               </div>
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center border-b border-logcol2 pb-2">
                 <strong className="text-sm text-gray-700 flex items-center">
                   <TimerOff className="mr-2" color="#ae2829ff" />
                   La fin de Durée :
                 </strong>
-                <p className="text-lg">{formData.finduree || "Non spécifié"}</p>
+                <p className="text-lg">{formData.finduree.replace('T',' à ') || "Non spécifié"}</p>
               </div>
-              
+
               <div>
-                <label htmlFor="note" className="block mb-2 text-primtext">
+                <label htmlFor="note" className="flex mb-2 text-primtext">
+                  <Notebook className="mr-2" color="#ae2829ff"></Notebook>
                   Note :
                 </label>
                 <textarea
@@ -381,12 +388,10 @@ export default function MultiStepForm() {
                   name="note"
                   value={formData.note}
                   onChange={handleChange}
-                  placeholder="Taper votre votre note (facultatif):"
+                  placeholder="Taper votre note (facultatif):"
                   className="w-full px-4 py-2 rounded bg-bg text-sectext h-32 border-gray-500 border-2"
                 ></textarea>
               </div>
-                  
-              
             </div>
           </div>
         )}
