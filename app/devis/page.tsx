@@ -92,9 +92,7 @@ export default function MultiStepForm() {
       const updatedAgentsPerService = { ...prev.agentsPerService };
       if (isServiceSelected) {
         delete updatedAgentsPerService[service];
-      } else {
-        updatedAgentsPerService[service] = 1; // Default to 1 agent when adding a service
-      }
+      } 
 
       return {
         ...prev,
@@ -211,7 +209,6 @@ export default function MultiStepForm() {
                         <span className="text-sm">Nombre d'agents :</span>
                         <input
                           type="number"
-                          min="1"
                           className="w-20 p-2 border rounded"
                           value={formData.agentsPerService[option.name] || ""}
                           onChange={(e) =>
