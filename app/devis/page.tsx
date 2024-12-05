@@ -248,9 +248,10 @@ export default function MultiStepForm() {
                   className="w-full p-3 rounded-lg bg-bg border border-gray-700 text-black focus:outline-none focus:border-red-500"
                 />
               </div>
-              <br/>
+              
               <div>
                 <label htmlFor="finduree">La fin de durée :</label>
+                <br/>
                 <input
                   id="finduree"
                   type="datetime-local"
