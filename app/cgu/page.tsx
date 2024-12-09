@@ -2,25 +2,16 @@
 
 import { motion } from "framer-motion";
 import {
-  Shield,
   Lock,
   Eye,
-  FileText,
-  Bold,
-  ShieldAlert,
-  Cookie,
-  FileCode2,
-  Fence,
-  Ban,
-  LinkIcon,
+  FileText, ShieldAlert, LinkIcon,
   Scale,
   Mail,
   Plus,
   OctagonAlert,
-  BookOpenText,
+  BookOpenText
 } from "lucide-react";
 import Link from "next/link";
-import { title } from "process";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },

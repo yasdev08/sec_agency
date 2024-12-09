@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Star, Shield, Users, Eye, Lock, Bell, FileCheck, ChevronDown, ChevronUp, Clock, UserCheck, ShieldCheck } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -100,7 +101,8 @@ export default function TestimonialsPage() {
   const [expandedTestimonial, setExpandedTestimonial] = useState<number | null>(null)
 
   return (
-    <div className="bg-gradient-to-b from-gray-100 to-white min-h-screen">
+<div>{notFound()}</div>    
+/*     <div className="bg-gradient-to-b from-gray-100 to-white min-h-screen">
       <motion.section 
         className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
         initial="initial"
@@ -123,13 +125,14 @@ export default function TestimonialsPage() {
 
         
 
-        <motion.div 
+         <motion.div 
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={fadeIn}
         >
           {testimonials.map((testimonial, index) => {
             const ServiceIcon = serviceIcons[testimonial.service as keyof typeof serviceIcons]
             return (
+              
               <motion.div 
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-lg"
@@ -217,6 +220,6 @@ export default function TestimonialsPage() {
           </Link>
         </motion.div>
       </motion.section>
-    </div>
+    </div> */
   )
 }

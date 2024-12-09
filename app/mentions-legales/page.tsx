@@ -1,9 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Shield, Lock, Eye, FileText, Bold, ShieldAlert, Cookie, FileCode2, Fence, Ban } from "lucide-react";
+import { Lock, Eye, FileText, ShieldAlert, Cookie, FileCode2, Fence, Ban } from "lucide-react";
 import Link from "next/link";
-import { title } from "process";
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -56,7 +55,7 @@ const legalSections = [
       <>
         <b>Hébergeur </b>:  Vercel
         <br />
-        <b>Adresse </b>: États-Unis
+        <b>Adresse </b>: San Francisco, California, U.S.
         <br />
         <b>Contact </b>: <a href="https://vercel.com/contact" rel="noreferrer" target="_blank"><b>www.vercel.com/contact</b></a>
       </>

@@ -75,7 +75,7 @@ export default function ServicesPage() {
           className="text-sectext text-xl mb-16 text-center max-w-5xl mx-auto"
           variants={fadeIn}
         >
-          Chez Cpservice, nous offrons une gamme complète de services de
+          Chez CPS, nous offrons une gamme complète de services de
           sécurité conçus pour répondre aux divers besoins de nos clients. Notre
           équipe de professionnels expérimentés utilise une technologie de
           pointe et des méthodologies éprouvées pour offrir une protection et

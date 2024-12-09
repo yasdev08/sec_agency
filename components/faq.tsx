@@ -11,7 +11,7 @@ export default function Faq() {
     {
       question: "Vos agents sont-ils formés et certifiés ?",
       answer:
-        "Oui, tous nos agents sont formés, certifiés et disposent d'une expérience dans les domaines de la sécurité, souvent issue des forces de l’ordre ou de l’armée.",
+        "Oui, tous nos agents sont formés, certifiés et disposent d'une expérience dans les domaines de la sécurité.",
     },
     {
       question: "Proposez-vous des services de sécurité personnalisés ?",

@@ -51,7 +51,7 @@ export default function Contactform() {
     <section className="py-20 bg-bg" id="contact">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-navtext text-center">
-          Contact Us
+          Contactez Nous
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div>
@@ -66,7 +66,7 @@ export default function Contactform() {
                   value={from_name}
                   onChange={(e) => setFrom_name(e.target.value)}
                   required
-                  placeholder="Veuillez Entrez Votre Nom"
+                  placeholder="Tapez Votre Nom / Nom de la société"
                   className="w-full px-4 py-2 rounded bg-bg text-sectext border-gray-500 border-2"
                 />
               </div>
@@ -112,7 +112,7 @@ export default function Contactform() {
                   id="message"
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  placeholder="Taper votre message"
+                  placeholder="Tapez votre message"
                   required
                   className="w-full px-4 py-2 rounded bg-bg text-sectext h-32 border-gray-500 border-2"
                 ></textarea>
@@ -143,10 +143,18 @@ export default function Contactform() {
                 <Phone className="w-6 h-6 mr-4 text-logcol2" />
                 <Link href="tel:+33623860657" legacyBehavior>
                   <a target="_blank" rel="noopener noreferrer">
-                    <span>+33 (623) 860-657</span>
+                    <span>+33 (759) 461-060</span>
                   </a>
                 </Link>
               </div>
+              <div className="flex items-center">
+              <Phone className="w-6 h-6 mr-4 text-logcol2" />
+              <Link href="tel:+33623860657" legacyBehavior>
+                  <a target="_blank" rel="noopener noreferrer">
+                    <span>+33 (759) 451-526</span>
+                  </a>
+                </Link>
+                </div>
               <div className="flex items-center">
                 <MapPin className="w-6 h-6 mr-4 text-logcol2" />
                 <Link

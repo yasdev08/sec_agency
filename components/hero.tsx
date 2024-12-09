@@ -43,7 +43,7 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="text-5xl font-bold mb-4 text-white"
         >
-          CpService pour un Monde Plus Sûr
+          Cyno Protection Service <br/> Pour Un Monde Plus Sûr
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 50 }}

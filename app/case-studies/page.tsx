@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { Shield, Users, Eye, Lock } from 'lucide-react'
 import {motion} from 'framer-motion'
+import { notFound } from 'next/navigation'
 export default function Case_studies() {
   const caseStudies = [
     {
@@ -40,7 +41,9 @@ export default function Case_studies() {
   ]
 
   return (
-    <div className="bg-bg text-primtext min-h-screen">
+
+    <div>{notFound()}</div>
+    /* <div className="bg-bg text-primtext min-h-screen">
       
 
       <main className="container mx-auto px-4 py-12">
@@ -86,6 +89,6 @@ export default function Case_studies() {
       </main>
 
       
-    </div>
+    </div> */
   )
 }
