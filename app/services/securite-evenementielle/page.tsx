@@ -42,7 +42,7 @@ export default function Seceven() {
         >
           <div className="md:w-1/2 mb-8 md:mb-0">
             <Image
-              src="/assets/agents-securite-evenementielle-paris.jpg"
+              src="/assets/securite-evenement.jpg"
               alt="Personal Protection"
               width={600}
               height={400}

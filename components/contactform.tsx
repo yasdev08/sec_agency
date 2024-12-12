@@ -1,10 +1,10 @@
-
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
- 
+import MyMap from "@/components/map" 
+import dynamic from "next/dynamic";
 
 
 export default function Contactform() {
@@ -12,6 +12,7 @@ export default function Contactform() {
   const [from_email, setFrom_email] = useState("");
   const [message, setMessage] = useState("");
   const [from_number, setFrom_number] = useState("");
+  
   
 
   const handleSubmit = (e: React.FormEvent) => {

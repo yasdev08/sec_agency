@@ -18,7 +18,7 @@ export default function Serv() {
               description:
                 "Nos services d'accueil et de sécurité événementielle assurent la tranquillité et le bon déroulement de vos événements, qu'ils soient privés ou publics.",
               link: "/services/securite-evenementielle",
-              image: "/assets/agents-securite-evenementielle-paris.jpg",
+              image: "/assets/securite-evenement.jpg",
             },
             {
               title: "Gestion de Foule et Contrôle d’Accès",

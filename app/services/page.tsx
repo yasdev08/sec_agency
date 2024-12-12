@@ -15,7 +15,7 @@ const services = [
     title: "Sécurité événementielle",
     description:
       "Confiez l'accueil et la sécurité de vos événements à notre équipe expérimentée.",
-    image: "/assets/agents-securite-evenementielle-paris.jpg",
+    image: "/assets/securite-evenement.jpg",
     link: "/services/securite-evenementielle",
   },
   {
