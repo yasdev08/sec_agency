@@ -1,10 +1,18 @@
-import { useMemo, useState } from "react";
+"use client"
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
-import MyMap from "@/components/map" 
-import dynamic from "next/dynamic";
+import "leaflet/dist/leaflet.css";
+import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
+import "leaflet-defaulticon-compatibility";
+
+const MapContainer = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), { ssr: false });
+const Marker = dynamic(() => import("react-leaflet").then((mod) => mod.Marker), { ssr: false });
+const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), { ssr: false });
+const TileLayer = dynamic(() => import("react-leaflet").then((mod) => mod.TileLayer), { ssr: false });
 
 
 export default function Contactform() {
@@ -12,6 +20,14 @@ export default function Contactform() {
   const [from_email, setFrom_email] = useState("");
   const [message, setMessage] = useState("");
   const [from_number, setFrom_number] = useState("");
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    // Only render map after the component is mounted in the client
+    setIsMounted(true);
+  }, []);
+
   
   
 
@@ -167,6 +183,25 @@ export default function Contactform() {
                 </Link>
                 
               </div>
+              
+
+              {isMounted && (
+              <MapContainer
+                center={[48.91013260329278, 2.3907975134907984]}
+                zoom={11}
+                scrollWheelZoom={true}
+                style={{ height: "400px", width: "600px" }}
+              >
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={[48.91013260329278, 2.3907975134907984]}>
+                  <Popup>This is your location!</Popup>
+                </Marker>
+              </MapContainer>
+            )}
+                    
             </div>
           </div>
         </div>

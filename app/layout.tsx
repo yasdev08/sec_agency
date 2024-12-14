@@ -6,6 +6,8 @@ import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Link from "next/link";
+import { Suspense } from "react";
+import Loading from "./loading";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -42,10 +44,11 @@ export default function RootLayout({
         <Nav />
 
         <main className="flex-grow">
+          <Suspense fallback={<Loading/>}>
           
           {children}
           {/*Whatsapp message icon on all pages*/}
-
+          </Suspense>
           <WhatsappMsg />
         </main>
 
