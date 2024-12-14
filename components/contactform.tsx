@@ -9,6 +9,7 @@ import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css";
 import "leaflet-defaulticon-compatibility";
 
+
 const MapContainer = dynamic(() => import("react-leaflet").then((mod) => mod.MapContainer), { ssr: false });
 const Marker = dynamic(() => import("react-leaflet").then((mod) => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import("react-leaflet").then((mod) => mod.Popup), { ssr: false });
