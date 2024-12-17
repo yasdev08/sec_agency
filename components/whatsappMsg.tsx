@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function WhatsappMsg(){
-    const phoneNumber = "+33623860657";
+    const phoneNumber = "+33759451526";
     const WAmessage = "Hello, I would like to inquire about your services"; // Custom message
     const whatsappIco = (
       <svg
