@@ -100,7 +100,7 @@ export default function About() {
           className="text-4xl md:text-5xl font-bold text-center mb-20 text-gray-800"
           variants={fadeIn}
         >
-          Pourquoi Nous Choisir?
+          Pourquoi nous choisir?
         </motion.h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ml-4">
             {[

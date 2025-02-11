@@ -8,6 +8,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import Link from "next/link";
 import { Suspense } from "react";
 import Loading from "./loading";
+import { Heart } from "lucide-react";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -60,8 +61,8 @@ export default function RootLayout({
               &copy; {new Date().getFullYear()} © Cpservice. Tous droits
               réservés.
             </p>
-            <p>Numéro cnaps:AUT-093-2123-10-07-20240952904</p>
-            <p>Numéro siret:898652912</p>
+            <p>CNAPS : AUT-093-2123-10-07-20240952904</p>
+            <p>Numéro siret : 898652912</p>
             <div className="flex-col flex">
             <Link href="/mentions-legales" className="font-bold underline hover:text-logcol2">
               Mentions légales
@@ -69,6 +70,11 @@ export default function RootLayout({
             <Link href="/cgu" className="font-bold underline hover:text-logcol2">
               CGU
             </Link>
+            <div>Ce site a été réalisé par <Link href="https://yasserm.vercel.app/" className="font-bold underline hover:text-logcol2">
+             Yasser
+            </Link></div>
+            
+            
             </div>
           </div>
         </footer>
