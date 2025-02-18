@@ -70,9 +70,9 @@ export default function RootLayout({
             <Link href="/cgu" className="font-bold underline hover:text-logcol2">
               CGU
             </Link>
-            <div>Ce site a été réalisé par <Link href="https://yasserm.vercel.app/" className="font-bold underline hover:text-logcol2">
+            {/* <div>Ce site a été réalisé par <Link href="https://yasserm.vercel.app/" className="font-bold underline hover:text-logcol2">
              Yasser
-            </Link></div>
+            </Link></div> */}
             
             
             </div>
