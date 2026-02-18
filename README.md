@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CP Service — Security Agency Website 🛡️
 
-## Getting Started
+**Professional website for a physical security agency, built as a freelance project.**
 
-First, run the development server:
+A modern, responsive website for CP Service — a security agency offering professional guard and protection services. Built for performance, credibility, and lead generation.
+
+🌐 **Live Site:** [cpservice.pro](https://www.cpservice.pro)
+
+---
+
+## 🚀 Features
+
+- Clean, professional design tailored for a security services brand
+- Fully responsive across all screen sizes
+- Services and contact sections optimized for lead generation
+- Fast performance with Next.js and static rendering
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org) (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- Node.js 18+
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+```bash
+git clone https://github.com/yasdev08/sec_agency.git
+cd sec_agency
+npm install
+```
+
+### Development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ☁️ Deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deployed on [Vercel](https://vercel.com). To deploy your own instance:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yasdev08/sec_agency)
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📁 Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+sec_agency/
+├── app/          # Next.js App Router pages and layouts
+├── components/   # Reusable UI components
+├── public/       # Static assets (images, icons, etc.)
+└── ...config files
+```
+
+---
+
+## 📝 Notes
+
+This project was built as a freelance client website. The source code is shared publicly with the client's permission as a portfolio piece.
+
+---
+
+## 👤 Author
+
+Built by [yasdev08](https://github.com/yasdev08)
